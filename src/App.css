@@ -1,4 +1,33 @@
+body {
+  animation: changeBackground 500s infinite; /* Change s to the desired duration of each background */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+@keyframes changeBackground {
+  0%, 100% {
+    background-image: url('src/assets/bg/bg_01.png');
+  }
+  15% {
+    background-image: url('src/assets/bg/bg_02.png');
+  }
+  30% {
+    background-image: url('src/assets/bg/bg_03.png');
+  }
+  50% {
+    background-image: url('src/assets/bg/bg_04.png');
+  }
+  75% {
+    background-image: url('src/assets/bg/bg_05.png');
+  }
+  80% {
+    background-image: url('src/assets/bg/bg_06.png');
+  }
+}
+
 #root {
+  
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -7,31 +36,15 @@
 
 .logo {
   height: 6em;
-  padding: 1.5em;
+  margin-top: 60%;
   will-change: filter;
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #868686aa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
 
 .card {
   padding: 2em;
