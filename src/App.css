@@ -51,6 +51,33 @@ body {
   padding: 2em;
 }
 
+.footer{
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-primary {
+  
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.login {
+  padding: 1% 11% 1% 11%;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 0.8px solid black;
+}
+
+.register {
+  padding: 1% 10% 1% 10%;
+  background-color: black;
+  color: white;
+}
+
+  
+    
+
 .read-the-docs {
   color: #888;
 }
