@@ -1,9 +1,9 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import logotype from './assets/logo/logotype.png'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
     <>
