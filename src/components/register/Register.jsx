@@ -1,19 +1,19 @@
 import { Link } from 'react-router-dom'
 import logo from '../../assets/logo/logo.png'
-import './login.css'
+import './Register.css'
 
-const Login = () => {
+const Register = () => {
 
   
     return (
-        <div className="login">
+        <div className="register">
             <nav className="nav-bar">
                 <a href="" >
                  <img src={logo} className="logo app" alt="Your Cloud logo " />
                  </a>
             </nav>
 
-            <form className='login-form'>
+            <form className='register-form'>
                 <input
                 className='input-field'
                 name="username"
@@ -29,7 +29,15 @@ const Login = () => {
                 // value={password}
                 // onChange={e => setPassword(e.target.value)}
                 />
-                <button className='login-btn'>Next</button>
+                <input
+                className='input-field'
+                name="password"
+                placeholder="Confirm Password"
+                type="password"
+                // value={password}
+                // onChange={e => setPassword(e.target.value)}
+                />
+                <button className='register-btn'>Confirm</button>
                 {/* {error?.error &&
                 <p className="error">Se ha producido un error: {error.error}</p>
                 } */}
@@ -40,20 +48,12 @@ const Login = () => {
                 
                 
             </form>
-            <footer className='footer'>
-                    <h3>Built by</h3>
-                <p>
-                <Link className="build-team" to="https://www.linkedin.com/in/gonzalo-jrr/" target="_blank">Gonzalo Rodriguez</Link>
-                <Link className="build-team" to="https://www.linkedin.com/in/scarlettsantanawilliams/" target="_blank">Scarlett Santana</Link>
-                <Link className="build-team" to="https://www.linkedin.com" target="_blank">Mohammed El Mangadi</Link>
-                <Link className="build-team" to="https://www.linkedin.com/in/vlad-puentesb/" target="_blank">Vlad Beltran</Link>
-                </p>
-            </footer>
+          
         </div>
       
     )
   }
   
-  export default Login
+  export default Register
   
   

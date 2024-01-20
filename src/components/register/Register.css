@@ -1,4 +1,4 @@
-.login {
+.register {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,7 +20,7 @@
     border-radius: 5px;
 }
 
-.login-form {
+.register-form {
     display: flex;
     flex-direction: column;
     width: 300px; 
@@ -37,7 +37,7 @@
     margin-top: .7rem;
 }
 
-.login-btn {
+.register-btn {
     padding: 4%;
     background-color: black;
     color: white;
@@ -47,37 +47,14 @@
     margin-top: .7rem;
 }
 
-.login-btn:hover {
-    background-color: rgb(255, 1, 196);
-    color: rgb(255, 255, 255);
-    border: 2.5px solid rgb(255, 1, 196);
+.register-btn:hover {
+    background-color: rgb(1, 255, 247);
+    color: rgb(7, 7, 7);
+    border: 2.5px solid rgb(1, 255, 247);
   }
 
 .recover-password-link {
     font-size: 10px;
     text-decoration: none;
     color: blue;
-}
-
-.footer {
-    display: block;
-}
-
-.footer h3 {
-    color: #343234;
-    font-size: 18px;
-}
-
-.build-team {
-    text-decoration: none;
-    font-size: 9px;
-    color: rgb(0, 0, 91);
-    margin-left: 1em;
-    margin-right: 1em;
-}
-
-.build-team:hover {
-    text-decoration: line-through;
-    font-size: 9px;
-    color: rgb(97, 3, 68);
 }
