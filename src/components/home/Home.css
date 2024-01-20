@@ -75,7 +75,7 @@
     border-radius: 5px;
   }
   
-  .login {
+  .login-btn {
     padding: .8% 4% .8% 4%;
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
@@ -83,13 +83,13 @@
     margin-right: 15px;
   }
   
-  .login:hover {
+  .login-btn:hover {
     background-color: rgb(11, 250, 78);
     color: rgb(0, 0, 0);
     border: 2.5px solid rgb(11, 250, 78);
   }
   
-  .register {
+  .register-btn {
     padding: .8% 3% .8% 3%;
     background-color: black;
     color: white;
@@ -97,7 +97,7 @@
     margin-left: 15px 
   }
   
-  .register:hover {
+  .register-btn:hover {
     background-color: rgb(11, 250, 78);
     color: rgb(0, 0, 0);
     border: 2.5px solid rgb(11, 250, 78);

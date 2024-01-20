@@ -16,8 +16,8 @@ const Home = () => {
         Upload and save your files, don't be shy!
       </p>
       <footer className='footer'>
-        <Link to="/login" className="btn-primary login">Login</Link>
-        <Link to="/register" className="btn-primary register">Register</Link>
+        <Link to="/login" className="btn-primary login-btn">Login</Link>
+        <Link to="/register" className="btn-primary register-btn">Register</Link>
       </footer>
       </div>
       
