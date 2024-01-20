@@ -30,21 +30,16 @@
     }
   }
   
-  #root {
-    
-    
-    text-align: center;
-  }
+
 
   .logo-container {
-    margin-top: 40%;
+    margin-top: 30%;
     margin-bottom: 15%;
   }
   
   .logotype {
     height: 6em;
     border-radius: 10px;
-   
     will-change: filter;
     transition: filter 300ms;
   }
