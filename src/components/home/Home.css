@@ -41,14 +41,14 @@
     margin-bottom: 15%;
   }
   
-  .logo {
+  .logotype {
     height: 6em;
     border-radius: 10px;
    
     will-change: filter;
     transition: filter 300ms;
   }
-  .logo:hover {
+  .logotype:hover {
     filter: drop-shadow(0 0 2em #868686aa);
   }
   

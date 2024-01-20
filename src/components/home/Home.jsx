@@ -9,7 +9,7 @@ const Home = () => {
     <div className="home">
        <div className='logo-container'>
         <a href="" >
-          <img src={logotype} className="logo app" alt="Your Cloud logo" />
+          <img src={logotype} className="logotype app" alt="Your Cloud logo" />
         </a>
 
         <p className="read-the-docs">
