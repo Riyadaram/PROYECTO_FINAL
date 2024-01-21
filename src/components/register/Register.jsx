@@ -14,12 +14,19 @@ const Register = () => {
             </nav>
 
             <form className='register-form'>
-                <input
+            <input
                 className='input-field'
                 name="username"
                 placeholder="User Name"
                 // value={username}
                 // onChange={e => setUsername(e.target.value)}
+                />
+                <input
+                className='input-field'
+                name="email"
+                placeholder="e mail address"
+                // value={email}
+                // onChange={e => setEmail(e.target.value)}
                 />
                 <input
                 className='input-field'
@@ -42,7 +49,7 @@ const Register = () => {
                 <p className="error">Se ha producido un error: {error.error}</p>
                 } */}
                 <p>
-                 <Link className="recover-password-link" to="/signup">Forgot your password?</Link>
+                 <Link className="recover-password-link" to="/login">Already have an account?</Link>
                 </p>
 
                 

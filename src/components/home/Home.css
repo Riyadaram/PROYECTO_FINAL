@@ -53,13 +53,14 @@
     padding: 2em;
   }
   
-  .read-the-docs {
+  .upload-and-save {
     color: #ecf5ec;
     font-weight: 200;
   }
   
-  .footer{
-    display: flex;
+  .btn-container{
+    display: block;
+    margin-top: 2.5rem;
     justify-content: center;
   }
   

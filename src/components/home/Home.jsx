@@ -12,13 +12,13 @@ const Home = () => {
           <img src={logotype} className="logotype app" alt="Your Cloud logo" />
         </a>
 
-        <p className="read-the-docs">
+        <p className="upload-and-save">
         Upload and save your files, don't be shy!
       </p>
-      <footer className='footer'>
+      <div className='btn-container'>
         <Link to="/login" className="btn-primary login-btn">Login</Link>
         <Link to="/register" className="btn-primary register-btn">Register</Link>
-      </footer>
+      </div>
       </div>
       
       

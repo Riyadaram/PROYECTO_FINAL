@@ -1,4 +1,4 @@
-.login {
+.recover {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,11 +20,17 @@
     border-radius: 5px;
 }
 
-.login-form {
+p {
+    color:#343234;
+    font-size: 14px;
+    margin: 0 1.5rem;
+}
+
+.recover-form {
     display: flex;
     flex-direction: column;
     width: 300px; 
-    padding-top: 30%;
+    padding-top: 10%;
 }
 
 .input-field {
@@ -37,7 +43,7 @@
     margin-top: .7rem;
 }
 
-.next-btn {
+.send-btn {
     padding: .8% 4% .8% 4%;
     background-color: black;
     color: white;
@@ -47,38 +53,19 @@
     margin-top: .7rem;
 }
 
-.next-btn:hover {
-    background-color: rgb(255, 1, 196);
+.send-btn:hover {
+    background-color: rgb(1, 128, 255);
     color: rgb(255, 255, 255);
-    border: 2.5px solid rgb(255, 1, 196);
+    border: 2.5px solid rgb(1, 128, 255);
   }
 
-.recover-password-link {
-    font-size: 10px;
+.go-back-btn {
+    font-size: 12px;
     text-decoration: none;
     color: blue;
 }
 
-.creators {
-    display: block;
-    position: fixed;
-    bottom: 20px; 
+.margin-p {
+    margin-top: 3rem;
 }
 
-.creators h3 {
-    color: #343234;
-    font-size: 18px;
-}
-
-.build-team {
-    text-decoration: none;
-    font-size: 9px;
-    color: rgb(0, 0, 91);
-
-}
-
-.build-team:hover {
-    text-decoration: line-through;
-    font-size: 9px;
-    color: rgb(97, 3, 68);
-}

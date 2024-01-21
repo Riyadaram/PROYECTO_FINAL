@@ -29,26 +29,26 @@ const Login = () => {
                 // value={password}
                 // onChange={e => setPassword(e.target.value)}
                 />
-                <button className='login-btn'>Next</button>
+                <button className='next-btn'>Next</button>
                 {/* {error?.error &&
                 <p className="error">Se ha producido un error: {error.error}</p>
                 } */}
                 <p>
-                 <Link className="recover-password-link" to="/signup">Forgot your password?</Link>
+                 <Link className="recover-password-link" to="/recoverpassword">Forgot your password?</Link>
                 </p>
 
                 
                 
             </form>
-            <footer className='footer'>
+            <div className='creators'>
                     <h3>Built by</h3>
                 <p>
-                <Link className="build-team" to="https://www.linkedin.com/in/gonzalo-jrr/" target="_blank">Gonzalo Rodriguez</Link>
-                <Link className="build-team" to="https://www.linkedin.com/in/scarlettsantanawilliams/" target="_blank">Scarlett Santana</Link>
-                <Link className="build-team" to="https://www.linkedin.com" target="_blank">Mohammed El Mangadi</Link>
+                <Link className="build-team" to="https://www.linkedin.com/in/gonzalo-jrr/" target="_blank">Gonzalo Rodriguez</Link>&nbsp;
+                <Link className="build-team" to="https://www.linkedin.com/in/scarlettsantanawilliams/" target="_blank">Scarlett Santana</Link>&nbsp;
+                <Link className="build-team" to="https://www.linkedin.com" target="_blank">Mohammed El Mangadi</Link>&nbsp;
                 <Link className="build-team" to="https://www.linkedin.com/in/vlad-puentesb/" target="_blank">Vlad Beltran</Link>
                 </p>
-            </footer>
+            </div>
         </div>
       
     )
