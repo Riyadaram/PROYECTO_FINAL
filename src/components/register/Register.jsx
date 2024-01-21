@@ -1,17 +1,14 @@
 import { Link } from 'react-router-dom'
-import logo from '../../assets/logo/logo.png'
+import Header from '../Header/Header'
 import './Register.css'
+
 
 const Register = () => {
 
   
     return (
         <div className="register">
-            <nav className="nav-bar">
-                <a href="" >
-                 <img src={logo} className="logo app" alt="Your Cloud logo " />
-                 </a>
-            </nav>
+            <Header />
 
             <form className='register-form'>
             <input
