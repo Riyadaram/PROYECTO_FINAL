@@ -18,7 +18,7 @@ const FooterMenu = () => {
 
                 <button>
                     <Link to="/"> {/*De momento este botón te lleva a Home hasta que se definan nuevas rutas*/}
-                      <img src={Plus} className="plus-button glow-on-hover" alt="Plus Button Logo"/>
+                      <img src={Plus} className="plus-button" alt="Plus Button Logo"/>
                     </Link>
                 </button>
                     
