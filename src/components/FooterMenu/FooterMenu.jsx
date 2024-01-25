@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
-import Home from '../../assets/footer_menu_logos/Home-button-logo.png'
-import Plus from '../../assets/footer_menu_logos/Plus-logo-button.png'
-import Search from '../../assets/footer_menu_logos/Search-button-logo.png'
+import Home from '../../assets/footer_menu_logos/Home_button.png'
+import Plus from '../../assets/footer_menu_logos/Plus_button.png'
+import Search from '../../assets/footer_menu_logos/Search_button.png'
 import './FooterMenu.css'
 
 
@@ -18,7 +18,7 @@ const FooterMenu = () => {
 
                 <button>
                     <Link to="/"> {/*De momento este botón te lleva a Home hasta que se definan nuevas rutas*/}
-                      <img src={Plus} className="plus-button" alt="Plus Button Logo"/>
+                      <img src={Plus} className="plus-button glow-on-hover" alt="Plus Button Logo"/>
                     </Link>
                 </button>
                     

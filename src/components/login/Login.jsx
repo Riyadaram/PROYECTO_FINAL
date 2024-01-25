@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Header from '../Header/Header'
 import './login.css'
+import FooterMenu from '../FooterMenu/FooterMenu'
 
 
 const Login = () => {
@@ -47,6 +48,7 @@ const Login = () => {
                 <Link className="build-team" to="https://www.linkedin.com/in/vlad-puentesb/" target="_blank">Vlad Beltran</Link>
                 </p>
             </div>
+            <FooterMenu />
         </div>
       
     )

@@ -1,0 +1,46 @@
+.bottom-menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 15px;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.25);
+  }
+  
+  footer {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.2s ease-in-out, box-shadow 0.5s ease-in-out;
+  }
+  
+  .home-button {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .plus-button {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    padding: 12px 25px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, rgba(255, 140, 0, 0), rgba(255, 140, 0, 0.5));
+    color: #fff;
+  }
+
+  .search-button {
+    width: 30px;
+    height: 30px;
+  }
+  
+  button:hover {
+    transform: scale(1.35);
+  }
