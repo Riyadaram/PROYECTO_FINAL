@@ -9,8 +9,9 @@
 
 .upload-btn {
     color: white;
-    border-radius: 5px;
-    height: 30px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    height: 50px;
     width: 200px;
     background: linear-gradient(45deg, #e1306c, #fd1d1d, #f56040, #f77737, #fcaf45, #ffdc80);
 }
@@ -22,9 +23,10 @@
 .create-folder-btn {
     background-color: black;
     color: white;
-    height: 30px;
-    width: 200px;
-    border-radius: 5px;
+    text-transform: uppercase;
+    height: 50px;
+    width: 185px;
+    border-radius: 50px;
     margin-top: .7rem;
 }
 
