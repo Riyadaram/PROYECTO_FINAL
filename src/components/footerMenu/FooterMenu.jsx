@@ -17,7 +17,7 @@ const FooterMenu = () => {
                 </button>
 
                 <button>
-                    <Link to="/add-a-file"> 
+                    <Link to="/add-file"> 
                       <img src={Plus} className="plus-button" alt="Plus Button Logo"/>
                     </Link>
                 </button>

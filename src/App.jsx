@@ -23,6 +23,10 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/recoverpassword" element={<RecoverPassword />} />
         <Route path="/user-content" element={<UserContent />} />
+        <Route path="/add-file" element='' />
+        <Route path="/create-folder" element='' />
+        <Route path="/folder" element='' />
+        <Route path="/search" element='' />
       </Routes>
     </>
   )

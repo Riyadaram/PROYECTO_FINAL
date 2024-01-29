@@ -8,10 +8,10 @@
 }
 
 .upload-btn {
-    padding: .8% 4% .8% 4%;
     color: white;
     border-radius: 5px;
-   
+    height: 30px;
+    width: 200px;
     background: linear-gradient(45deg, #e1306c, #fd1d1d, #f56040, #f77737, #fcaf45, #ffdc80);
 }
 
@@ -20,9 +20,10 @@
 }
 
 .create-folder-btn {
-    padding: .8% 4% .8% 4%;
     background-color: black;
     color: white;
+    height: 30px;
+    width: 200px;
     border-radius: 5px;
     margin-top: .7rem;
 }
