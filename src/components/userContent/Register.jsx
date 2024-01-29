@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import Header from '../header/Header'
 import './Register.css'
-import FooterMenu from '../FooterMenu/FooterMenu'
 
 
 
@@ -54,7 +53,7 @@ const Register = () => {
                 
                 
             </form>
-            <FooterMenu />
+           
           
         </div>
       
