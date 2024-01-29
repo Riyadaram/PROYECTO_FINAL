@@ -17,13 +17,13 @@ const FooterMenu = () => {
                 </button>
 
                 <button>
-                    <Link to="/"> {/*De momento este botón te lleva a Home hasta que se definan nuevas rutas*/}
+                    <Link to="/"> 
                       <img src={Plus} className="plus-button" alt="Plus Button Logo"/>
                     </Link>
                 </button>
                     
                 <button>
-                    <Link to="/"> {/*De momento este botón te lleva avHome hasta que se definan nuevas rutas*/}
+                    <Link to="/"> 
                       <img src={Search} className="search-button" alt="Search Button Logo"/>
                     </Link>
                 </button>
