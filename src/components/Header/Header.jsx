@@ -7,7 +7,7 @@ const Header = () => {
   
     return (
         <nav className="nav-bar">
-                <Link to="/">
+                <Link to="/user-content">
                  <img src={logo} className="logo app" alt="Your Cloud logo " />
                  </Link>
             </nav>

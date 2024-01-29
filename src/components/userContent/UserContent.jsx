@@ -14,8 +14,8 @@ const UserContent = () => {
             <Header />
 
             <h1 className="user-name">User Name</h1>
-            <button className="upload-btn" onClick={}>Upload</button>
-            <button className="create-folder-btn" onClick={}>New Folder</button>
+            <button className="upload-btn" >Upload</button>
+            <button className="create-folder-btn" >New Folder</button>
 
             <FooterMenu />
             

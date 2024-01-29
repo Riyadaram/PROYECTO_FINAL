@@ -7,37 +7,29 @@
     background-color: rgb(241, 241, 241);
 }
 
-.register-form {
-    display: flex;
-    flex-direction: column;
-    width: 300px; 
-    padding-top: 30%;
-}
-
-.input-field {
-    border: 2px solid black;
+.upload-btn {
+    padding: .8% 4% .8% 4%;
+    color: white;
     border-radius: 5px;
-    text-align: center;
-    font-size: .8em;
-    color: #4c4a4c;
-    padding: 3% 5% 3% 5%;
-    margin-top: .7rem;
+   
+    background: linear-gradient(45deg, #e1306c, #fd1d1d, #f56040, #f77737, #fcaf45, #ffdc80);
 }
 
-.register-btn {
+.upload-btn:hover {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c);
+}
+
+.create-folder-btn {
     padding: .8% 4% .8% 4%;
     background-color: black;
     color: white;
-    border: 2.5px solid black;
     border-radius: 5px;
-    margin-left: 15px; 
     margin-top: .7rem;
 }
 
-.register-btn:hover {
+.create-folder-btn:hover {
     background-color: rgb(1, 255, 247);
     color: rgb(7, 7, 7);
-    border: 2.5px solid rgb(1, 255, 247);
   }
 
 .recover-password-link {
