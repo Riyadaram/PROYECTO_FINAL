@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
-import Header from '../../Header/Header'
+import Header from '../../components/Header/Header'
 import './login.css'
-import FooterMenu from '../../FooterMenu/FooterMenu'
+import FooterMenu from '../../components/FooterMenu/FooterMenu'
 
 
 const Login = () => {
