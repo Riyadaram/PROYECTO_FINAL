@@ -17,6 +17,8 @@ const Login = () => {
                 className='input-field'
                 name="username"
                 placeholder="User Name"
+                id="username"
+                required
                 // value={username}
                 // onChange={e => setUsername(e.target.value)}
                 />

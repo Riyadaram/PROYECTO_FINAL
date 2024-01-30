@@ -1,50 +1,72 @@
 import { Link } from 'react-router-dom'
 import Header from '../../components/Header/Header'
 import './Register.css'
+import { useState } from 'react'
 
 
 const Register = () => {
+
+    const [username, setUsername] = useState ('');
+    const [email, setEmail] = useState ('');
+    const [password1, setPassword1] = useState ('');
+    const [password2, setPassword2] = useState ('');
+    const [error, setError] = useState ('');
+
+    const handleForm = async (e) => {
+        e.preventDefault();           {/* Este preventDefault evita que se envíe el formulario por http */}
+
+        if(password1 !== password2) {
+            setError('Las contraseñas no coinciden')
+            return;
+        }
+    };
 
   
     return (
         <div className="register">
             <Header />
 
-            <form className='register-form'>
-            <input
+            <form className='register-form' onSubmit={handleForm}>
+                <input
                 className='input-field'
                 name="username"
                 placeholder="User Name"
-                // value={username}
-                // onChange={e => setUsername(e.target.value)}
+                id="username"
+                required
+                onChange={(e) => setUsername(e.target.value)}
                 />
                 <input
                 className='input-field'
                 name="email"
                 placeholder="e mail address"
+                id="email"
+                required
                 // value={email}
-                // onChange={e => setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
                 />
                 <input
                 className='input-field'
-                name="password"
+                name="password1"
                 placeholder="Password"
                 type="password"
+                id="password1"
+                required
                 // value={password}
-                // onChange={e => setPassword(e.target.value)}
+                onChange={(e) => setPassword1(e.target.value)}
                 />
                 <input
                 className='input-field'
-                name="password"
+                name="password2"
                 placeholder="Confirm Password"
                 type="password"
+                id="password2"
+                required
                 // value={password}
-                // onChange={e => setPassword(e.target.value)}
+                onChange={(e) => setPassword2(e.target.value)}
                 />
                 <button className='register-btn'>Confirm</button>
-                {/* {error?.error &&
-                <p className="error">Se ha producido un error: {error.error}</p>
-                } */}
+                {error ? <p>{error}</p> : null} {/* Esta línea permite gestionar cualquier error relacionado con el registro a través del gestor de errores de la API */}
+
                 <p>
                  <Link className="recover-password-link" to="/login">Already have an account?</Link>
                 </p>
