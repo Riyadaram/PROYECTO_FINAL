@@ -52,6 +52,8 @@ const Register = () => {
                 required
                 onChange={(e) => setUsername(e.target.value)}
                 />
+
+                
                 <input
                 className='input-field'
                 name="email"
