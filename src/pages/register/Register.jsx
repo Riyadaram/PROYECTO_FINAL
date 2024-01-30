@@ -2,10 +2,13 @@ import { Link } from 'react-router-dom'
 import Header from '../../components/Header/Header'
 import './Register.css'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import resgisterUserService from '../../services'
 
 
 const Register = () => {
+
+    const navigate = useNavigate();
 
     const [username, setUsername] = useState ('');
     const [email, setEmail] = useState ('');
@@ -25,6 +28,9 @@ const Register = () => {
         try {
             await resgisterUserService({user_name: username, email, password: password1});
 
+            //Ir a login si el registro no da error y se hace con éxito
+            navigate("/login");
+
         } catch (error) {
             setError(error.message);
 
@@ -37,6 +43,7 @@ const Register = () => {
             <Header />
 
             <form className='register-form' onSubmit={handleForm}>
+
                 <input
                 className='input-field'
                 name="username"
@@ -51,9 +58,10 @@ const Register = () => {
                 placeholder="e mail address"
                 id="email"
                 required
-                // value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 />
+
+
                 <input
                 className='input-field'
                 name="password1"
@@ -61,9 +69,10 @@ const Register = () => {
                 type="password"
                 id="password1"
                 required
-                // value={password}
                 onChange={(e) => setPassword1(e.target.value)}
                 />
+
+
                 <input
                 className='input-field'
                 name="password2"
@@ -71,9 +80,10 @@ const Register = () => {
                 type="password"
                 id="password2"
                 required
-                // value={password}
                 onChange={(e) => setPassword2(e.target.value)}
                 />
+
+
                 <button className='register-btn'>Confirm</button>
                 {error ? <p>{error}</p> : null} {/* Esta línea permite gestionar cualquier error relacionado con el registro a través del gestor de errores de la API */}
 

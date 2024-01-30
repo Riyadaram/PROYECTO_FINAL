@@ -2,9 +2,21 @@ import { Link } from 'react-router-dom'
 import Header from '../../components/Header/Header'
 import './login.css'
 import FooterMenu from '../../components/FooterMenu/FooterMenu'
+import { useState } from 'react'
 
 
 const Login = () => {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+
+    const handleForm = async (e) => {
+        e.preventDefault();
+
+        try {
+        } catch (error) {}
+    };
 
   
     return (
@@ -12,28 +24,35 @@ const Login = () => {
             <Header />
     
 
-            <form className='login-form'>
+            <form className='login-form' onSubmit={handleForm}>
+
+
                 <input
                 className='input-field'
-                name="username"
-                placeholder="User Name"
-                id="username"
+                name="email"
+                placeholder="User Email"
+                id="email"
+                type="email"
                 required
-                // value={username}
-                // onChange={e => setUsername(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
                 />
+
+
                 <input
                 className='input-field'
                 name="password"
                 placeholder="Password"
                 type="password"
-                // value={password}
-                // onChange={e => setPassword(e.target.value)}
+                id="password"
+                required
+                onChange={(e) => setPassword(e.target.value)}
                 />
-                <button className='next-btn'>Next</button>
-                {/* {error?.error &&
-                <p className="error">Se ha producido un error: {error.error}</p>
-                } */}
+
+
+                <button className='next-btn'>Login</button>
+                {error ? <p>{error}</p> : null}
+
+
                 <p>
                  <Link className="recover-password-link" to="/recoverpassword">Forgot your password?</Link>
                 </p>
