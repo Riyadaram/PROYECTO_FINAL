@@ -8,7 +8,7 @@
 }
 
 .register-form {
-    font-family: 'Genos', sans-serif;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,11 +16,11 @@
 }
 
 .input-field {
+    font-family: 'Genos', sans-serif;
     width: 280px;
     height: 16px;
-    border-radius: 50px;
     text-align: center;
-    font-size: .9em;
+    font-size: 1.1em;
     color: #4c4a4c;
     margin-top: .7rem;
 }
