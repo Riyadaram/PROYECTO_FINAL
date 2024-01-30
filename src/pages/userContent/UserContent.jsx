@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
-import Header from '../header/Header'
+import Header from '../../components/header/Header'
 import './UserContent.css'
-import FooterMenu from '../footerMenu/FooterMenu'
+import FooterMenu from '../../components/footerMenu/FooterMenu'
 
 
 
