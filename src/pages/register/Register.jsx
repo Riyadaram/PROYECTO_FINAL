@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Header from '../../components/Header/Header'
 import './Register.css'
 import { useState } from 'react'
+import resgisterUserService from '../../services'
 
 
 const Register = () => {
@@ -14,10 +15,19 @@ const Register = () => {
 
     const handleForm = async (e) => {
         e.preventDefault();           {/* Este preventDefault evita que se envíe el formulario por http */}
+        setError("");
 
         if(password1 !== password2) {
             setError('Las contraseñas no coinciden')
             return;
+        }
+
+        try {
+            await resgisterUserService({user_name: username, email, password: password1});
+
+        } catch (error) {
+            setError(error.message);
+
         }
     };
 
