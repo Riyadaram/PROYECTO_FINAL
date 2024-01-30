@@ -11,28 +11,29 @@
 .login-form {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 300px; 
     padding-top: 30%;
 }
 
 .input-field {
-    width: 280px;
+    width: 260px;
     height: 16px;
     border-radius: 50px;
+    height: 16px;
     text-align: center;
-    font-size: .9em;
+    font-size: 1.1em;
     color: #4c4a4c;
     margin-top: .7rem;
 }
 
 .next-btn {
     font-family: 'Genos', sans-serif;
-    padding: .8% 4% .8% 4%;
+    height: 40px;
+    width: 280px;
+    border-radius: 50px;
     background-color: black;
     color: white;
-    border: 2.5px solid black;
-    border-radius: 5px;
-    margin-left: 15px; 
     margin-top: .7rem;
 }
 
@@ -43,7 +44,7 @@
   }
 
 .recover-password-link {
-    font-size: 10px;
+    font-size: 13px;
     text-decoration: none;
     color: blue;
 }
@@ -54,7 +55,7 @@
     bottom: 20px; 
 }
 
-.creators h3 {
+.creators h5 {
     color: #343234;
     font-size: 18px;
 }
@@ -62,12 +63,12 @@
 .build-team {
     text-decoration: none;
     font-size: 12px;
-    color: rgb(0, 0, 91);
+    color: rgb(1, 1, 129);
 
 }
 
 .build-team:hover {
     text-decoration: line-through;
     font-size: 9px;
-    color: rgb(97, 3, 68);
+    color: rgb(0, 0, 0);
 }
