@@ -8,10 +8,6 @@
 }
 
 .upload-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
     color: white;
     text-transform: uppercase;
     border-radius: 50px;
@@ -25,10 +21,6 @@
 }
 
 .create-folder-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
     background-color: black;
     color: white;
     text-transform: uppercase;

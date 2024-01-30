@@ -41,7 +41,7 @@ const Register = () => {
                 // value={password}
                 // onChange={e => setPassword(e.target.value)}
                 />
-                <button className='register-btn'>Confirm</button>
+                <button className='register-btn2'>Confirm</button>
                 {/* {error?.error &&
                 <p className="error">Se ha producido un error: {error.error}</p>
                 } */}

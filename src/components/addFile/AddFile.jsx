@@ -14,8 +14,8 @@ const UserContent = () => {
             <Header />
 
             <h1 className="user-name">User Name</h1>
-            <Link to='' className="upload-btn" >Upload File</Link>
-            <Link to='' className="create-folder-btn" >New Folder</Link>
+            <button className="upload-btn" >Upload File</button>
+            <button className="create-folder-btn" >New Folder</button>
 
             <FooterMenu />
             

@@ -1,4 +1,5 @@
 .login {
+    font-family: 'Genos', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,16 +16,17 @@
 }
 
 .input-field {
-    border: 2px solid black;
-    border-radius: 5px;
+    width: 280px;
+    height: 16px;
+    border-radius: 50px;
     text-align: center;
-    font-size: .8em;
+    font-size: .9em;
     color: #4c4a4c;
-    padding: 3% 5% 3% 5%;
     margin-top: .7rem;
 }
 
 .next-btn {
+    font-family: 'Genos', sans-serif;
     padding: .8% 4% .8% 4%;
     background-color: black;
     color: white;
@@ -59,7 +61,7 @@
 
 .build-team {
     text-decoration: none;
-    font-size: 9px;
+    font-size: 12px;
     color: rgb(0, 0, 91);
 
 }
