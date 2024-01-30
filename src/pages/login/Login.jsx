@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import Header from '../../components/Header/Header'
 import './login.css'
-import FooterMenu from '../../components/FooterMenu/FooterMenu'
 import { useState } from 'react'
+import {loginUserService} from '../../services'
 
 
 const Login = () => {
@@ -13,9 +13,15 @@ const Login = () => {
 
     const handleForm = async (e) => {
         e.preventDefault();
+        setError("");
 
         try {
-        } catch (error) {}
+            const data = await loginUserService({email, password})
+
+            console.log(data);
+        } catch (error) {
+            setError(error.message);
+        }
     };
 
   
@@ -69,7 +75,6 @@ const Login = () => {
                 <Link className="build-team" to="https://www.linkedin.com/in/vlad-puentesb/" target="_blank">Vlad Beltran</Link>
                 </p>
             </div>
-            <FooterMenu />
         </div>
       
     )

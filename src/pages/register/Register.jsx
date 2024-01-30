@@ -3,7 +3,7 @@ import Header from '../../components/Header/Header'
 import './Register.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import resgisterUserService from '../../services'
+import {registerUserService} from '../../services'
 
 
 const Register = () => {
@@ -26,7 +26,7 @@ const Register = () => {
         }
 
         try {
-            await resgisterUserService({user_name: username, email, password: password1});
+            await registerUserService({user_name: username, email, password: password1});
 
             //Ir a login si el registro no da error y se hace con éxito
             navigate("/login");
@@ -53,7 +53,7 @@ const Register = () => {
                 onChange={(e) => setUsername(e.target.value)}
                 />
 
-                
+
                 <input
                 className='input-field'
                 name="email"
