@@ -21,8 +21,8 @@ const Login = () => {
             const data = await loginUserService({email, password})
 
             console.log(data);
-            
-            setToken(data);
+
+            setToken(data.token);
 
         } catch (error) {
             setError(error.message);
