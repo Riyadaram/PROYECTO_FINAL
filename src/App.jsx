@@ -6,6 +6,7 @@ import Register from './pages/register/Register'
 import RecoverPassword from './pages/login/RecoverPassword'
 import UserContent from './pages/userPage/UserContent'
 import './App.css'
+import CreateFolderPage from './pages/createFolder/CreateFolder'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -20,7 +21,7 @@ function App() {
         <Route path="/user-content" element={<UserContent />} /> 
         {/* Aquí puedes añadir las nuevas rutas de la rama Zalo */}
         <Route path="/add-file" element='' />
-        <Route path="/create-folder" element='' />
+        <Route path="/create-folder" element={<CreateFolderPage />} />
         <Route path="/folder" element='' />
         <Route path="/search" element='' />
       </Routes>
