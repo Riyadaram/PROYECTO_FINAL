@@ -13,7 +13,7 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const {setToken} = useContext(AutenticacionContext);
+    const {setToken, setUser} = useContext(AutenticacionContext);
 
     const handleForm = async (e) => {
         e.preventDefault();
@@ -25,6 +25,7 @@ const Login = () => {
             console.log(data);
 
             setToken(data.token);
+            setUser(data.user); {/*Darle una vuelta a esto */}
 
             navigate("/user-content");
 
