@@ -1,7 +1,18 @@
-import { createContext } from "react"
+import { createContext, useEffect, useState } from "react"
 
 export const AutenticacionContext = createContext();
 
 export const AutenticacionProviderComponent = ({children}) => {
-    return <AutenticacionContext.Provider>{children}</AutenticacionContext.Provider>;
+
+    const [token, setToken] = useState(localStorage.getItem("token"));
+
+    useEffect(() => {
+
+        localStorage.setItem("token", token);
+
+    }, [token]);
+
+
+
+    return <AutenticacionContext.Provider value={{token, setToken}}>{children}</AutenticacionContext.Provider>;
 };

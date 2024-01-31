@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
 import Header from '../../components/Header/Header'
 import './login.css'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import {loginUserService} from '../../services'
+import { AutenticacionContext } from '../../context/AutenticacionContext'
 
 
 const Login = () => {
@@ -10,6 +11,7 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const {setToken} = useContext(AutenticacionContext);
 
     const handleForm = async (e) => {
         e.preventDefault();
@@ -19,6 +21,9 @@ const Login = () => {
             const data = await loginUserService({email, password})
 
             console.log(data);
+            
+            setToken(data);
+
         } catch (error) {
             setError(error.message);
         }
