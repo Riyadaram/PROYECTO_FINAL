@@ -1,9 +1,29 @@
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import {loginUserService} from '../../services'
 import Header from '../../components/header/Header'
 import './Login.css'
 
 
 const Login = () => {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+
+    const handleForm = async (e) => {
+        e.preventDefault();
+        setError("");
+
+        try {
+            const data = await loginUserService({email, password})
+
+            console.log(data);
+        } catch (error) {
+            setError(error.message);
+        }
+    };
+
 
   
     return (
@@ -14,23 +34,25 @@ const Login = () => {
             <form className='login-form'>
                 <input
                 className='input-field'
-                name="username"
-                placeholder="User Name"
-                // value={username}
-                // onChange={e => setUsername(e.target.value)}
+                name="email"
+                placeholder="User Email"
+                id="email"
+                type="email"
+                required
+                onChange={(e) => setEmail(e.target.value)}
                 />
                 <input
                 className='input-field'
                 name="password"
                 placeholder="Password"
                 type="password"
-                // value={password}
-                // onChange={e => setPassword(e.target.value)}
+                id="password"
+                required
+                onChange={(e) => setPassword(e.target.value)}
                 />
                 <button className='next-btn'>Next</button>
-                {/* {error?.error &&
-                <p className="error">Se ha producido un error: {error.error}</p>
-                } */}
+                {error ? <p>{error}</p> : null}
+                
                 <p>
                  <Link className="recover-password-link" to="/recoverpassword">Forgot your password?</Link>
                 </p>
