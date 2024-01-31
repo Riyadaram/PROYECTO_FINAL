@@ -21,7 +21,7 @@ const Register = () => {
                 <input
                 className='input-field'
                 name="email"
-                placeholder="e mail address"
+                placeholder="E-mail Address"
                 // value={email}
                 // onChange={e => setEmail(e.target.value)}
                 />

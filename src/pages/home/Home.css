@@ -57,6 +57,7 @@
   .upload-and-save {
     color: #ecf5ec;
     font-weight: 200;
+    font-size: 18px;
   }
   
   .btn-container{
@@ -74,7 +75,7 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 1rem;
     text-transform: uppercase;
   }
   
@@ -89,9 +90,9 @@
   }
   
   .register-btn {
-    width: 220px;
+    border: 1px solid rgb(35, 249, 213);;
     background-color: #292929;
-    color: white;
+    color: rgb(35, 249, 213);
     margin-top: 20px;
   }
   
