@@ -86,7 +86,7 @@ const Register = () => {
                 />
 
 
-                <button className='register-btn'>Confirm</button>
+                <button className='register-btn2'>Confirm</button>
                 {error ? <p>{error}</p> : null} {/* Esta línea permite gestionar cualquier error relacionado con el registro a través del gestor de errores de la API */}
 
                 <p>
