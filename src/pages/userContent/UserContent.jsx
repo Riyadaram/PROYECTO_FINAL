@@ -14,6 +14,7 @@ const UserContent = () => {
             <Header />
 
             <h1 className="user-name">User Name</h1>
+            <Link to='' className="logout-btn" >Log Out</Link>
             <Link to='' className="upload-btn" >Upload File</Link>
             <Link to='' className="create-folder-btn" >New Folder</Link>
 
