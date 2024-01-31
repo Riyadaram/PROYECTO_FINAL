@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import {loginUserService} from '../../services'
 import Header from '../../components/header/Header'
@@ -6,6 +6,8 @@ import './Login.css'
 
 
 const Login = () => {
+
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -17,6 +19,8 @@ const Login = () => {
 
         try {
             const data = await loginUserService({email, password})
+
+            navigate("/user-content");
 
             console.log(data);
         } catch (error) {
@@ -31,7 +35,7 @@ const Login = () => {
             <Header />
     
 
-            <form className='login-form'>
+            <form className='login-form' onSubmit={handleForm}>
                 <input
                 className='input-field'
                 name="email"
@@ -52,7 +56,7 @@ const Login = () => {
                 />
                 <button className='next-btn'>Next</button>
                 {error ? <p>{error}</p> : null}
-                
+
                 <p>
                  <Link className="recover-password-link" to="/recoverpassword">Forgot your password?</Link>
                 </p>

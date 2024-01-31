@@ -1,50 +1,85 @@
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import {registerUserService} from '../../services'
 import Header from '../../components/header/Header'
 import './Register.css'
 
 
 const Register = () => {
 
+    const navigate = useNavigate();
+
+    const [username, setUsername] = useState ('');
+    const [email, setEmail] = useState ('');
+    const [password1, setPassword1] = useState ('');
+    const [password2, setPassword2] = useState ('');
+    const [error, setError] = useState ('');
+
+    const handleForm = async (e) => {
+        e.preventDefault();           {/* Este preventDefault evita que se envíe el formulario por http */}
+        setError("");
+
+        if(password1 !== password2) {
+            setError('Las contraseñas no coinciden')
+            return;
+        }
+
+        try {
+            await registerUserService({user_name: username, email, password: password1});
+
+            //Ir a login si el registro no da error y se hace con éxito
+            navigate("/login");
+
+        } catch (error) {
+            setError(error.message);
+
+        }
+    };
+
   
     return (
         <div className="register">
             <Header />
 
-            <form className='register-form'>
+            <form className='register-form' onSubmit={handleForm}>
             <input
                 className='input-field'
                 name="username"
                 placeholder="User Name"
-                // value={username}
-                // onChange={e => setUsername(e.target.value)}
+                id="username"
+                required
+                onChange={(e) => setUsername(e.target.value)}
                 />
                 <input
                 className='input-field'
                 name="email"
-                placeholder="E-mail Address"
-                // value={email}
-                // onChange={e => setEmail(e.target.value)}
+                placeholder="e mail address"
+                id="email"
+                required
+                onChange={(e) => setEmail(e.target.value)}
                 />
                 <input
                 className='input-field'
-                name="password"
+                name="password1"
                 placeholder="Password"
                 type="password"
-                // value={password}
-                // onChange={e => setPassword(e.target.value)}
+                id="password1"
+                required
+                onChange={(e) => setPassword1(e.target.value)}
                 />
                 <input
                 className='input-field'
-                name="password"
+                name="password2"
                 placeholder="Confirm Password"
                 type="password"
-                // value={password}
-                // onChange={e => setPassword(e.target.value)}
+                id="password2"
+                required
+                onChange={(e) => setPassword2(e.target.value)}
                 />
                 <button className='register-btn2'>Confirm</button>
-                {/* {error?.error &&
-                <p className="error">Se ha producido un error: {error.error}</p>
-                } */}
+                {error ? <p>{error}</p> : null}
+                
                 <p>
                  <Link className="recover-password-link" to="/login">Already have an account?</Link>
                 </p>
