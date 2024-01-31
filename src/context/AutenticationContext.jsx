@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react"
+import { createContext, useEffect, useState, useContext } from "react"
 
 export const AutenticacionContext = createContext();
 
@@ -16,3 +16,5 @@ export const AutenticacionProviderComponent = ({children}) => {
 
     return <AutenticacionContext.Provider value={{token, setToken}}>{children}</AutenticacionContext.Provider>;
 };
+
+export const UserContext = () => useContext(AutenticacionContext)
