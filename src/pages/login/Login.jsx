@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Header from '../../components/Header/Header'
 import './login.css'
 import { useContext, useState } from 'react'
@@ -7,6 +7,8 @@ import { AutenticacionContext } from '../../context/AutenticacionContext'
 
 
 const Login = () => {
+
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -23,6 +25,8 @@ const Login = () => {
             console.log(data);
 
             setToken(data.token);
+
+            navigate("/user-content");
 
         } catch (error) {
             setError(error.message);
