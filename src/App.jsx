@@ -5,6 +5,7 @@ import Login from './pages/login/Login'
 import Register from './pages/register/Register'
 import RecoverPassword from './pages/login/RecoverPassword'
 import UserContent from './pages/userContent/UserContent'
+import NotFound from './pages/notFound/NotFound'
 import './App.css'
 
 
@@ -27,6 +28,7 @@ function App() {
         <Route path="/create-folder" element='' />
         <Route path="/folder" element='' />
         <Route path="/search" element='' />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   )
