@@ -77,7 +77,7 @@ const Login = () => {
                 
             </form>
             <div className='creators'>
-                    <h3>Built by</h3>
+                    <h5>Built by</h5>
                 <p>
                 <Link className="build-team" to="https://www.linkedin.com/in/gonzalo-jrr/" target="_blank">Gonzalo Rodriguez</Link>&nbsp;
                 <Link className="build-team" to="https://www.linkedin.com/in/scarlettsantanawilliams/" target="_blank">Scarlett Santana</Link>&nbsp;
