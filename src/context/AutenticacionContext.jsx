@@ -5,11 +5,12 @@ export const AutenticacionContext = createContext();
 export const AutenticacionProviderComponent = ({children}) => {
 
     const [token, setToken] = useState(localStorage.getItem("token"));
-    const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")) || null);
+    const [user, setUser] = useState((localStorage.getItem("user")));
 
     useEffect(() => {
 
         localStorage.setItem("token", token);
+        localStorage.setItem("user", user); // user_name
 
     }, [token, user]);
 

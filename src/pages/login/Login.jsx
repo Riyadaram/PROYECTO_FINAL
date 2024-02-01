@@ -25,7 +25,7 @@ const Login = () => {
             console.log(data);
 
             setToken(data.token);
-            setUser(data.user); {/*Darle una vuelta a esto */}
+            setUser(data.user_name); {/*Darle una vuelta a esto */}
 
             navigate("/user-content");
 
