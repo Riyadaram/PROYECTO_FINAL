@@ -12,23 +12,22 @@ import './UserContent.css'
 
 const UserContent = () => {
 
-    const {user, logout} = useContext(AutenticacionContext); {/*Darle una vuelta a esto*/}
+    const {user, logout} = useContext(AutenticacionContext); 
     const navigate = useNavigate();
   
     return (
         <div className="user-content">
             <Header />
 
-            <h1 className="user-name">{user ? user : 'User Name'}</h1> {/*Trabajando en nombre del usuario al hacer login*/}
-            {/* <Link to='' className="logout-btn" >Log Out</Link> */}
+            <h1 className="user-name">{user ? user : 'User Name'}</h1> 
             <a href="#" className="logout-btn" onClick={(e)=>{
                     e.preventDefault();
                     logout();
-                    navigate("/login");
-            }}>Logout</a>
+                    navigate("/");
+            }}>Logout
+            </a>
 
-            {/* <h1 className="user-name">User Name</h1>
-            <span className="logout-btn" onClick={() => setUser()}>Log Out</span> */}
+           
             <FileUpload />
             <Link to='/create-folder' className="create-folder-btn" >New Folder</Link>
 
