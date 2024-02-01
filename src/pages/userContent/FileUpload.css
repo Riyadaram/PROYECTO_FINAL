@@ -22,11 +22,19 @@
     border-radius: 50px;
     height: 30px;
     width: 100px;
-    background: linear-gradient(45deg, #363536, #000000, #454544);
+    border: 1px solid black;
+    color: black
+  }
+
+  .search-files-btn:hover {
+    background-color: aquamarine;
+    border: 1px solid black;
+    color: black
   }
   
   .upload-btn {
     font-family: 'Genos', sans-serif;
+    font-size: 16px;
     margin-top: 4px;
     display: flex;
     justify-content: center;
