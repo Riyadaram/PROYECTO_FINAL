@@ -17,23 +17,23 @@ const CreateFolder = () => {
   };
 
   return (
-    <div className="user-content">
+    <div className="create-folder">
       <Header />
 
-      <h1 className="user-name">Crear Nueva Carpeta</h1>
+        <p className='p-folder'>Introduduce the name of the folder</p>
 
-      <form onSubmit={handleSubmit}>
+      <form className="folder.form" onSubmit={handleSubmit}>
         <input 
           type="text" 
           value={folderName}
           onChange={handleFolderNameChange}
-          placeholder="Nombre de la carpeta"
+          placeholder="Folder Name"
           className="input-field"
         />
-        <button type="submit" className="create-folder-btn">Crear Carpeta</button>
+        <button type="submit" className="create-folder-btn">Create Folder</button>
       </form>
 
-      <Link to='/user-content' className="logout-btn">Regresar</Link>
+      {/* <Link to='/user-content' className="logout-btn">Go back</Link> */}
 
       <FooterMenu />
     </div>

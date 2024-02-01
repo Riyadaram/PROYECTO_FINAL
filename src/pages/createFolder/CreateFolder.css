@@ -1,4 +1,22 @@
-.createFolder {
+.create-folder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.p-folder { 
+    margin-top: 40px;
+    color: #343234;
+    font-size: 18px;
+}
+
+.folder.form {
+    display: contents;
+    margin-top: -20px;
+}
+
+.create-folder-btn {
+    font-family: 'Genos', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,7 +28,6 @@
     width: 185px;
     border-radius: 50px;
     margin-top: .7rem;
-    margin-left: -38px;
   }
   
   .back-btn {
