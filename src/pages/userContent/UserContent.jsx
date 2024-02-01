@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import Header from '../../components/header/Header'
-import ImgUpload from './ImageUpload'
-import './UserContent.css'
+import FileUpload from './FileUpload'
 import FooterMenu from '../../components/footerMenu/FooterMenu'
+import './UserContent.css'
 
 
 
@@ -17,7 +17,7 @@ const UserContent = () => {
 
             <h1 className="user-name">User Name</h1>
             <span className="logout-btn" onClick={() => setUser()}>Log Out</span>
-            <ImgUpload />
+            <FileUpload />
             <Link to='' className="create-folder-btn" >New Folder</Link>
 
             <FooterMenu />

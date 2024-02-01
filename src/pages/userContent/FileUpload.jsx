@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import './ImgUpload.css';
+import './FileUpload.css';
 
-const ImgUpload = () => {
+const FileUpload = () => {
   const [file, setFile] = useState();
   const [preview, setPreview] = useState();
 
@@ -74,5 +74,5 @@ const ImgUpload = () => {
   );
 };
 
-export default ImgUpload;
+export default FileUpload;
 
