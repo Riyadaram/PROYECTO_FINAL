@@ -1,7 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import {loginUserService} from '../../services'
 import Header from '../../components/header/Header'
+import { AutenticacionContext } from '../../context/AutenticationContext'
 import './Login.css'
 
 
@@ -12,6 +13,7 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const {setToken, setUser} = useContext(AutenticacionContext);
 
     const handleForm = async (e) => {
         e.preventDefault();
@@ -20,9 +22,13 @@ const Login = () => {
         try {
             const data = await loginUserService({email, password})
 
+            console.log(data);
+
+            setToken(data.token);
+            setUser(data.user_name); {/*Darle una vuelta a esto */}
+
             navigate("/user-content");
 
-            console.log(data);
         } catch (error) {
             setError(error.message);
         }
