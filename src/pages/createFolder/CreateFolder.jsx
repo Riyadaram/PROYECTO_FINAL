@@ -30,10 +30,10 @@ const CreateFolderPage = () => {
           placeholder="Nombre de la carpeta"
           className="input-field"
         />
-        <button type="submit" className="create-folder-btn">Crear Carpeta</button>
+        <button type="submit" className="createFolder">Crear Carpeta</button>
       </form>
 
-      <Link to='/user-content' className="logout-btn">Regresar</Link>
+      <Link to='/user-content' className="back-btn">Regresar</Link>
 
       <FooterMenu />
     </div>
