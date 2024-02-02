@@ -1,75 +1,38 @@
-import { useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import './FileUpload.css';
+import { AutenticacionContext } from "../../context/AutenticacionContext";
+import { uploadFileService } from "../../services";
 
 const FileUpload = () => {
-  const [file, setFile] = useState();
-  const [preview, setPreview] = useState();
+    const [error, setError] = useState('');
+    const {token} = useContext(AutenticacionContext);
 
-  const handleChange = e => {
-    const file = e.target.files[0];
-    setFile(file);
-    setPreview(URL.createObjectURL(file));
-  };
+    const handleFormUpload = async (e) => {
+        e.preventDefault();
 
-  const handleSubmit = async e => {
-    e.preventDefault();
-    const fd = new FormData();
-    fd.append('file', file);
-    const res = await fetch(`${import.meta.env.VITE_URL_API}`, {
-      method: 'POST',
-      body: fd,
-      headers: { 'Authorization': 'Client-ID' },
-    });
-    const data = await res.json();
-    console.log(data);
-  };
+        try {
 
-  const handleFormSubmit = (e) => {
-    handleSubmit(e);
-  };
+            const data = new FormData(e.target);
+            const file = await uploadFileService({data, token})
 
-  useEffect(() => {
-    const searchFilesBtn = document.querySelector(".search-files-btn");
-    const fileInput = document.querySelector(".imgUpload input[type='file']");
+            console.log(file)
 
-    if (searchFilesBtn && fileInput) {
-      const handleBtnClick = () => {
-        // Trigger the click event on the file input
-        fileInput.click();
-      };
-
-      const handleFileChange = () => {
-        // You can add additional logic here if needed
-        console.log("File selected:", fileInput.files[0]);
-      };
-
-      searchFilesBtn.addEventListener("click", handleBtnClick);
-      fileInput.addEventListener("change", handleFileChange);
-
-      return () => {
-        // Cleanup event listeners when the component is unmounted
-        searchFilesBtn.removeEventListener("click", handleBtnClick);
-        fileInput.removeEventListener("change", handleFileChange);
-      };
+        } catch (error) {
+            setError(error.message);
+        } 
     }
-  }, []); // Empty dependency array ensures the effect runs only once after mount
-
+  
   return (
-    <form onSubmit={handleSubmit} className="imgUpload">
-      <label>
-        <img src={preview} alt="" />
-        <input
-          type="file"
-          onChange={handleChange}
-          accept="file/*"
-        />
+    <form className="imgUpload">
+      
         <button type="button" className="search-files-btn">
           Search Files
         </button>
-      </label>
-      <button type="button" className="upload-btn" onClick={handleFormSubmit}>
+      
+      <button type="file" className="upload-btn" onClick={handleFormUpload} accept="file/*">
         Upload
       </button>
+      {error ? <p>{error}</p> : null}
     </form>
   );
 };
