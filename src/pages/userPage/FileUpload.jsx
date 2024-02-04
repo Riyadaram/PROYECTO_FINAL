@@ -7,34 +7,38 @@ const FileUpload = () => {
     const [error, setError] = useState('');
     const {token} = useContext(AutenticacionContext);
 
-    const handleFormUpload = async (e) => {
-        e.preventDefault();
-
+    const handleFileChange = async (e) => {
         try {
-
-            const data = new FormData(e.target);
-            const file = await uploadFileService({data, token})
-
-            console.log(file)
-
+            const file = e.target.files[0];
+            const formData = new FormData();
+            formData.append('file', file);
+            const uploadedFile = await uploadFileService(formData, token);
+            console.log(uploadedFile);
         } catch (error) {
             setError(error.message);
         } 
     }
   
-  return (
-    <form className="imgUpload">
-      
-        <button type="button" className="search-files-btn">
-          Search Files
-        </button>
-      
-      <button type="file" className="upload-btn" onClick={handleFormUpload} accept="file/*">
-        Upload
-      </button>
-      {error ? <p>{error}</p> : null}
-    </form>
-  );
+    return (
+        <form className="imgUpload">
+            <label>
+                <input
+                    type="file"
+                    className="file-input"
+                    onChange={handleFileChange}
+                    accept="file/*"
+                    style={{ display: 'none' }} // Oculta el input de tipo file
+                />
+                <button type="button" className="search-files-btn" onClick={() => document.querySelector('.file-input').click()}>
+                    Search Files
+                </button>
+            </label>
+            <button type="submit" className="upload-btn" accept="file/*">
+                Upload
+            </button>
+            {error ? <p>{error}</p> : null}
+        </form>
+    );
 };
 
 export default FileUpload;
