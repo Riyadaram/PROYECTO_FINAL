@@ -1,36 +1,37 @@
-import { useState, useContext } from "react"
+import { useContext, useEffect, useState } from 'react';
 import { AutenticacionContext } from "../../context/AutenticationContext";
 
-const EntryImages = ({ entry }) => {
-  const [photos, setPhotos] = useState(entry.photos)
-  const {token} = useContext(AutenticacionContext);
-  const userActions = useUserActions()
+const FileGallery = () => {
+  const { user } = useContext(AutenticacionContext);
+  const [userFiles, setUserFiles] = useState([]);
 
-  const handlePhoto = e => {
-    const photo = e.target.files[0]
-    const fd = new FormData()
-    fd.append('photo', photo)
-    userActions.addPhoto(entry.id, fd)
-      .then(res => {
-        setPhotos([...photos, res.data.photo])
-      })
-  }
+  useEffect(() => {
+    const fetchUserFiles = async () => {
+      try {
+        const response = await fetch(`${import.meta.env.VITE_URL_API}/${user.id}`);
+        const data = await response.json();
+        setUserFiles(data.files);
+      } catch (error) {
+        console.error('Error fetching user files:', error);
+      }
+    };
+
+    fetchUserFiles();
+  }, [user.id]);
 
   return (
-    <div className="entry-images">
-      {photos.map(p =>
-        <img key={p.id} src={'https://viajes.anxoso.com/' + p.name} />
-      )}
-      {entry.owner && photos.length < 3 &&
-        <form className="add-image">
-          <label>
-            <span>+</span>
-            <input type="file" onChange={handlePhoto} />
-          </label>
-        </form>
-      }
+    <div className="file-gallery-container">
+      <h2>Your File Gallery</h2>
+      <div className="file-grid">
+        {userFiles.map((file) => (
+          <div key={file.id} className="file-item">
+            <img src={file.url} alt={file.name} />
+            <p>{file.name}</p>
+          </div>
+        ))}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default EntryImages
+export default FileGallery;
