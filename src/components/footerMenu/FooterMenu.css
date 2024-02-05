@@ -50,3 +50,17 @@
     background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c);
     transform: scale(1.1);
   }
+
+  .folder-button {
+    position: relative;
+    width: 25px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c);
+    transition: background 1.5s ease-in-out, color 1s ease-in-out;
+    border: 0px solid transparent;
+  }
+  
+  .folder-button:hover {
+    background: linear-gradient(45deg, #e1306c, #fd1d1d, #f56040, #f77737, #fcaf45, #ffdc80);
+  }

@@ -6,6 +6,7 @@ import { AutenticacionContext } from '../../context/AutenticationContext'
 import './Login.css'
 
 
+
 const Login = () => {
 
     const navigate = useNavigate();
@@ -34,8 +35,6 @@ const Login = () => {
         }
     };
 
-
-
   
     return (
         <div className="login">
@@ -43,6 +42,8 @@ const Login = () => {
     
 
             <form className='login-form' onSubmit={handleForm}>
+
+
                 <input
                 className='input-field'
                 name="email"
@@ -52,6 +53,8 @@ const Login = () => {
                 required
                 onChange={(e) => setEmail(e.target.value)}
                 />
+
+
                 <input
                 className='input-field'
                 name="password"
@@ -61,16 +64,18 @@ const Login = () => {
                 required
                 onChange={(e) => setPassword(e.target.value)}
                 />
-                <button className='next-btn'>Next</button>
+
+
+                <button className='next-btn'>Login</button>
                 {error ? <p>{error}</p> : null}
+
 
                 <p>
                  <Link className="recover-password-link" to="/recoverpassword">Forgot your password?</Link>
                 </p>
 
-                
-                
-            </form>
+
+                </form>
             <div className='creators'>
                     <h5>Built by</h5>
                 <p>
@@ -86,5 +91,3 @@ const Login = () => {
   }
   
   export default Login
-  
-  

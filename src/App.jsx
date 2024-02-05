@@ -6,8 +6,8 @@ import Register from './pages/register/Register'
 import RecoverPassword from './pages/login/RecoverPassword'
 import UserContent from './pages/userContent/UserContent'
 import NotFound from './pages/notFound/NotFound'
-import './App.css'
 import CreateFolder from './pages/createFolder/CreateFolder'
+import './App.css'
 
 
 

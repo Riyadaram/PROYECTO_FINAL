@@ -6,6 +6,7 @@ import Header from '../../components/header/Header'
 import './Register.css'
 
 
+
 const Register = () => {
 
     const navigate = useNavigate();
@@ -43,7 +44,8 @@ const Register = () => {
             <Header />
 
             <form className='register-form' onSubmit={handleForm}>
-            <input
+
+                <input
                 className='input-field'
                 name="username"
                 placeholder="User Name"
@@ -51,6 +53,8 @@ const Register = () => {
                 required
                 onChange={(e) => setUsername(e.target.value)}
                 />
+
+
                 <input
                 className='input-field'
                 name="email"
@@ -59,6 +63,8 @@ const Register = () => {
                 required
                 onChange={(e) => setEmail(e.target.value)}
                 />
+
+
                 <input
                 className='input-field'
                 name="password1"
@@ -68,6 +74,8 @@ const Register = () => {
                 required
                 onChange={(e) => setPassword1(e.target.value)}
                 />
+
+
                 <input
                 className='input-field'
                 name="password2"
@@ -77,9 +85,11 @@ const Register = () => {
                 required
                 onChange={(e) => setPassword2(e.target.value)}
                 />
+
+
                 <button className='register-btn2'>Confirm</button>
-                {error ? <p>{error}</p> : null}
-                
+                {error ? <p>{error}</p> : null} {/* Esta línea permite gestionar cualquier error relacionado con el registro a través del gestor de errores de la API */}
+
                 <p>
                  <Link className="recover-password-link" to="/login">Already have an account?</Link>
                 </p>
@@ -94,5 +104,3 @@ const Register = () => {
   }
   
   export default Register
-  
-  
