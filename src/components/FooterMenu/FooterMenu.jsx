@@ -6,7 +6,7 @@ import { uploadFileService } from '../../services';
 
 import Home from '../../assets/footer_menu_logos/Home_button.png';
 import Plus from '../../assets/footer_menu_logos/Plus_button.png';
-import Folder from '../../assets/footer_menu_logos/'
+import Folder from '../../assets/footer_menu_logos/Add_folder_button.png';
 
 
 const FooterMenu = () => {
@@ -41,8 +41,9 @@ const FooterMenu = () => {
                 </button>
 
                 <button>
-                    {/* Renderiza el botón plus con el evento onClick */}
-                    <img src={Plus} className="plus-button" alt="Plus Button Logo" onClick={handlePlusButtonClick}/>
+                    <Link to="/create-folder">
+                        <img src={Folder} className="folder-button" alt="Add Folder Logo" />
+                    </Link>
                 </button>
 
                 <button>

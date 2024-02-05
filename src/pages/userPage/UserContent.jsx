@@ -1,8 +1,8 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import { AutenticacionContext } from '../../context/AutenticacionContext'
 import Header from '../../components/Header/Header'
-import FileUpload from './FileUpload'
+
 import FooterMenu from '../../components/footerMenu/FooterMenu'
 import './UserContent.css'
 
@@ -28,8 +28,7 @@ const UserContent = () => {
             </a>
 
            
-            <FileUpload />
-            <Link to='/create-folder' className="create-folder-btn" >New Folder</Link>
+            
 
             <FooterMenu />
             
