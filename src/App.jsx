@@ -7,7 +7,7 @@ import RecoverPassword from './pages/login/RecoverPassword'
 import UserContent from './pages/userPage/UserContent'
 import NotFound from './pages/notFound/NotFound'
 import './App.css'
-import CreateFolder from './pages/createFolder/CreateFolder'
+import CreateFolder from './pages/createrFolder/CreateFolder'
 
 
 

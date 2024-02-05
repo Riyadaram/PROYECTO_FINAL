@@ -23,7 +23,7 @@ const CreateFolder = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
+          'Authorization': `${token}`
         },
         body: JSON.stringify({ folderName }) // Envía el nombre de la carpeta en el cuerpo de la solicitud
       });

@@ -41,7 +41,7 @@ export const loginUserService = async ({email, password}) => {
 };
 
 
-export const uploadFileService = async ({data, token}) => {
+export const uploadFileService = async (data, token) => {
     const response = await fetch(`${import.meta.env.VITE_URL_API}/files`, {
         method: "POST",
         body: data,
