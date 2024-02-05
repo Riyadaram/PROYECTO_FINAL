@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import { AutenticacionContext } from '../../context/AutenticationContext'
 import Header from '../../components/header/Header'
-import FileUpload from './FileUpload'
+import FileUpload from '../../components/fileUpload/FileUpload'
 import FooterMenu from '../../components/footerMenu/FooterMenu'
 import './UserContent.css'
 
