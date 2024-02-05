@@ -1,8 +1,10 @@
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import logotype from '../../assets/logo/logotype.png'
 import './NotFound.css'
 
 const NotFound = () => {
+
+  const navigate = useNavigate();
   
 
   return (
@@ -16,7 +18,11 @@ const NotFound = () => {
         Page Not Found...
       </p>
       <div className='btn-container'>
-        <Link to="/" className="goback-btn">Go Back</Link>
+        <a href="#" className="goback-btn" onClick={(e)=>{
+                    e.preventDefault();
+                    navigate("/user-content");
+            }}>Go Back
+            </a>
       </div>
       </div>
       

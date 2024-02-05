@@ -20,7 +20,7 @@ const CreateFolder = () => {
     <div className="create-folder">
       <Header />
 
-        <p className='p-folder'>Introduduce the name of the folder</p>
+        <p className='p-folder'>Choose a name for the folder</p>
 
       <form className="folder.form" onSubmit={handleSubmit}>
         <input 

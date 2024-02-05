@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { AutenticacionContext } from '../../context/AutenticacionContext'
+import { AutenticacionContext } from '../../context/AutenticationContext'
 import { useContext } from 'react'
 import logo from '../../assets/logo/logo.png'
 import './Header.css'

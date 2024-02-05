@@ -19,7 +19,8 @@ const UserContent = () => {
         <div className="user-content">
             <Header />
 
-            <h1 className="user-name">{user ? user : 'User Name'}</h1> 
+         
+            <h1 className="user-name">{user ? user.user_name : 'User Name'}</h1> 
             <a href="#" className="logout-btn" onClick={(e)=>{
                     e.preventDefault();
                     logout();
