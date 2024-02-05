@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react'; 
-// import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import FooterMenu from '../../components/footerMenu/FooterMenu';
 import './CreateFolder.css';
@@ -8,6 +8,7 @@ import { AutenticacionContext } from '../../context/AutenticacionContext';
 const CreateFolder = () => {
   const [folderName, setFolderName] = useState('');
   const { token } = useContext(AutenticacionContext);
+  const navigate = useNavigate();
 
   const handleFolderNameChange = (e) => {
     setFolderName(e.target.value);
@@ -31,6 +32,7 @@ const CreateFolder = () => {
       if (response.ok) {
         console.log('Carpeta creada exitosamente');
         // Puedes redirigir al usuario o realizar otras acciones aquí
+        navigate("/user-content");
       } else {
         console.error('Error al crear la carpeta:', response.statusText);
       }
