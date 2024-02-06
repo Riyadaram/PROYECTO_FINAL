@@ -5,6 +5,7 @@ import FileUpload from '../../pages/userPage/FileUpload'
 import FooterMenu from '../../components/footerMenu/FooterMenu'
 import FileGalleryFolder from './FileGallery-folder'
 import './FolderContent.css'
+import FolderFileUpload from './FolderFileUpload'
 
 
 
@@ -20,7 +21,7 @@ const FolderContent = () => {
             <Header />
 
             <h3 className="folder-name">{folderName ? folderName : 'Folder Name'}</h3> 
-            
+            <FolderFileUpload />
 
            <FileGalleryFolder />
             

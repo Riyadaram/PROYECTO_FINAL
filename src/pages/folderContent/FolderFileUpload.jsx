@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
-import { AutenticacionContext } from "../../context/AutenticationContext";
+import { AutenticacionContext } from "../../context/AutenticacionContext";
 import { uploadFileService } from "../../services";
-import './FileUpload.css';
+import './FolderFileUpload.css';
 
 const FolderFileUpload = ({ folderId }) => {
     const [error, setError] = useState('');
