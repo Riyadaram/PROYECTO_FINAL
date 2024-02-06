@@ -1,22 +1,29 @@
 import { useState, useEffect, useContext } from 'react';
-import { getFoldersAndFiles } from '../../services';
+import { getFilesInFolder, getFoldersAndFiles } from '../../services';
 import { AutenticacionContext } from '../../context/AutenticacionContext';
 import { Link } from 'react-router-dom';
+import { CiFolderOn } from "react-icons/ci";
 
 
-const FoldersAndFiles = () => {
+const FoldersAndFiles = ({carpeta, files, setFiles}) => {
     const [folders, setFolders] = useState([]);
-    const [files, setFiles] = useState([]);
+    const [folder, setFolder] = useState();
     const [error, setError] = useState(null);
     const { token } = useContext(AutenticacionContext);
+
   
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await getFoldersAndFiles(token);
-          console.log("Folders and Files Data:", response);
-          setFolders(response.folder);
+            let response;
+            if(carpeta){
+                response = await getFilesInFolder(token, carpeta );
+            }else{
+                response = await getFoldersAndFiles(token);
+            }
+          setFolders(response.folders ? response.folders: []);
           setFiles(response.files);
+          setFolder(response.folder)
         } catch (error) {
           setError(error.message);
         }
@@ -28,7 +35,7 @@ const FoldersAndFiles = () => {
       return () => {
         // Perform cleanup if needed
       };
-    }, [token]); // Dependencia de efecto: token
+    }, [token, carpeta]); // Dependencia de efecto: token
   
     if (error) {
       return <div>Error: {error}</div>;
@@ -36,13 +43,23 @@ const FoldersAndFiles = () => {
   
     return (
         <div className="file-gallery-container">
-        <h2>Your Content</h2>
+        <h2>{folder?.folder_name}</h2>
         <div className="file-grid">
         <div>
+          {folder && (
+            <>
+            <p>.</p>
+            <Link to={`/user-content`}>
+              ..
+            </Link>
+            </>
+          )
+          }  
           {folders.map(folder => (
             // <div key={folder.id} className="file-item"><p>{folder.folder_name}</p></div>
             <div key={folder.id} className="file-item">
-            <Link to={`/folder/${folder.id}`}>
+            <CiFolderOn />
+            <Link to={`/user-content?c=${folder.id}`}>
               <i className="fas fa-folder"></i>
               <p>{folder.folder_name}</p>
             </Link>
@@ -53,9 +70,8 @@ const FoldersAndFiles = () => {
         <div>
           {files.map(file => (
             <div key={file.id} className="file-item">
-              <img src={file.url} alt={file.name} />
-              <p>{file.file_name}</p>
-              </div>
+              <a href={`${import.meta.env.VITE_URL_API}/${file.user_id}${!carpeta? "" : "/"+carpeta}/${file.file_name}`} target={"_blank"} alt={file.file_name} download={true} rel="noreferrer">{file.file_name}</a>
+             </div>
           ))}
         </div>
         </div>

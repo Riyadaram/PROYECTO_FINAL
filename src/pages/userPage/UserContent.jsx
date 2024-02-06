@@ -1,5 +1,5 @@
-import {  useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import {  useContext, useEffect, useState } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { AutenticacionContext } from '../../context/AutenticacionContext';
 import Header from '../../components/Header/Header';
 import FooterMenu from '../../components/footerMenu/FooterMenu';
@@ -7,8 +7,15 @@ import './UserContent.css';
 import FoldersAndFiles from '../../components/FoldersAndFiles/FoldersAndFiles';
 
 const UserContent = () => {
+    const [files, setFiles] = useState([]);
     const { user, logout } = useContext(AutenticacionContext);
     const navigate = useNavigate();
+    const [searchParams, ] = useSearchParams();
+    const [carpeta, setCarpeta] =  useState(searchParams.get("c"))
+
+    useEffect(()=>{
+            setCarpeta(searchParams.get("c"))
+    }, [searchParams])
     
 
     
@@ -23,11 +30,11 @@ const UserContent = () => {
             }}>Logout</a>
 
 
-            <FoldersAndFiles />
+            <FoldersAndFiles carpeta={carpeta} files={files} setFiles={setFiles} />
 
 
 
-            <FooterMenu />
+            <FooterMenu carpeta={carpeta} setFiles={setFiles} />
         </div>
     );
 };

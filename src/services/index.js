@@ -44,10 +44,10 @@ export const loginUserService = async ({email, password}) => {
 export const uploadFileService = async (data, token) => {
     const response = await fetch(`${import.meta.env.VITE_URL_API}/files`, {
         method: "POST",
-        body: data,
         headers: {
             Authorization: token,
         },
+        body: data,
     });
 
     const json = await response.json();
@@ -70,6 +70,23 @@ export const getFoldersAndFiles = async (token) => {
     const json = await response.json();
 
     console.log("API Response:", json);
+
+    if(!response.ok) {
+        throw new Error(json.message);
+    }
+
+    return json.data;  
+};
+
+export const getFilesInFolder = async (token, carpeta_selecionada) => {
+    const response = await fetch(`${import.meta.env.VITE_URL_API}/folder/${carpeta_selecionada}}`, {
+        method: "GET",
+        headers: {
+            Authorization: token,
+        },
+    });
+
+    const json = await response.json();
 
     if(!response.ok) {
         throw new Error(json.message);
