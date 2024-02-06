@@ -1,19 +1,19 @@
 .file-gallery-container {
-    margin: 20px;
-  }
-  
-  .file-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  
-  .file-item {
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .file-item img {
-    width: 100%;
-    height: auto;
-  }
+  margin: 20px;
+}
+
+.file-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.file-item {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.file-item img {
+  width: 100%;
+  height: auto;
+}

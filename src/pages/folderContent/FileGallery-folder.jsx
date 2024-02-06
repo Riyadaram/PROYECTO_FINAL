@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
-import { AutenticacionContext } from "../../context/AutenticationContext";
+import { AutenticacionContext } from '../../context/AutenticationContext';
 import { getFoldersAndFiles } from '../../services';
 import { Link } from 'react-router-dom';
+import './FileGallery-folder.css'
 
 const FileGalleryFolder = () => {
   const [folders, setFolders] = useState([]);

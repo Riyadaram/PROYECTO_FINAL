@@ -1,61 +1,68 @@
-import { useContext, useEffect, useState } from 'react';
-import { AutenticacionContext } from "../../context/AutenticationContext";
-import { getFoldersAndFiles } from '../../services';
+import { useState, useEffect, useContext } from 'react';
+import { getFilesInFolder, getFoldersAndFiles } from '../../services';
+import { AutenticacionContext } from '../../context/AutenticationContext';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { CiFolderOn } from "react-icons/ci";
 
-const FileGallery = () => {
-  const [folders, setFolders] = useState([]);
-    const [files, setFiles] = useState([]);
+
+
+
+const FoldersAndFiles = ({carpeta, files, setFiles}) => {
+    const [folders, setFolders] = useState([]);
+    const [folder, setFolder] = useState();
     const [error, setError] = useState(null);
     const { token } = useContext(AutenticacionContext);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await getFoldersAndFiles(token);
-        console.log("Folders and Files Data:", response);
-        setFolders(response.folder);
-        setFiles(response.files);
-      } catch (error) {
-        setError(error.message);
-      }
-    };
-
-    fetchData();
-
-    // Cleanup function
-    return () => {
-      // Perform cleanup if needed
-    };
-  }, [token]); // Dependencia de efecto: token
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
-  //   const fetchUserFiles = async () => {
-  //     try {
-  //       const response = await fetch(`${import.meta.env.VITE_URL_API}/${user.id}`);
-  //       const data = await response.json();
-  //       setUserFiles(data.files);
-  //     } catch (error) {
-  //       console.error('Error fetching user files:', error);
-  //     }
-  //   };
-
-  //   fetchUserFiles();
-  // }, [user.id]);
-
-  return (
-
-    <div className="file-gallery-container">
-        <h2>Your Content</h2>
+  
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+            let response;
+            if(carpeta){
+                response = await getFilesInFolder(token, carpeta );
+            }else{
+                response = await getFoldersAndFiles(token);
+            }
+          setFolders(response.folders ? response.folders: []);
+          setFiles(response.files);
+          setFolder(response.folder)
+        } catch (error) {
+          setError(error.message);
+        }
+      };
+  
+      fetchData();
+  
+      // Cleanup function
+      return () => {
+        // Perform cleanup if needed
+      };
+    }, [token, carpeta, setFiles]); // Dependencia de efecto: token
+  
+    if (error) {
+      return <div>Error: {error}</div>;
+    }
+  
+    return (
+        <div className="file-gallery-container">
+        <h2>{folder?.folder_name}</h2>
         <div className="file-grid">
         <div>
+          {folder && (
+            <>
+            <p>.</p>
+            <Link to={`/user-content`}>
+              ..
+            </Link>
+            </>
+          )
+          }  
           {folders.map(folder => (
             // <div key={folder.id} className="file-item"><p>{folder.folder_name}</p></div>
             <div key={folder.id} className="file-item">
-            <Link to={`/folder/${folder.id}`}>
+            <CiFolderOn />
+            <Link to={`/user-content?c=${folder.id}`}>
               <i className="fas fa-folder"></i>
               <p>{folder.folder_name}</p>
             </Link>
@@ -66,16 +73,20 @@ const FileGallery = () => {
         <div>
           {files.map(file => (
             <div key={file.id} className="file-item">
-              <a href={`${import.meta.env.VITE_URL_API}/${file.user_id}/${file.file_name}`} alt={file.file_name} download={true}>{file.file_name}</a>
-              </div>
+              <a href={`${import.meta.env.VITE_URL_API}/${file.user_id}${!carpeta? "" : "/"+carpeta}/${file.file_name}`} target={"_blank"} alt={file.file_name} download={true} rel="noreferrer">{file.file_name}</a>
+             </div>
           ))}
         </div>
         </div>
        
       </div>
+    );
+  };
 
-
-  );
-};
-
-export default FileGallery;
+  FoldersAndFiles.propTypes = {
+    carpeta: PropTypes.string, // carpeta prop is expected to be a string
+    files: PropTypes.array.isRequired, // files prop is expected to be an array and is required
+    setFiles: PropTypes.func.isRequired // setFiles prop is expected to be a function and is required
+  };
+  
+  export default FoldersAndFiles;
