@@ -27,15 +27,15 @@ const FileUpload = () => {
                   className="file-input"
                   onChange={handleFileChange}
                   accept="file/*"
-                  style={{ display: 'none' }} // Oculta el input de tipo file
+                  style={{ display: 'none' }} 
               />
               <button type="button" className="search-files-btn" onClick={() => document.querySelector('.file-input').click()}>
-                  Search Files
+                  UPLOAD FILES
               </button>
           </label>
-          <button type="submit" className="upload-btn" accept="file/*">
+          {/* <button type="submit" className="upload-btn" accept="file/*">
               Upload
-          </button>
+          </button> */}
           {error ? <p>{error}</p> : null}
       </form>
   );
