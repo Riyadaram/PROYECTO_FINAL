@@ -6,13 +6,15 @@ export const AutenticacionProviderComponent = ({children}) => {
 
     const [token, setToken] = useState(localStorage.getItem("token"));
     const [user, setUser] = useState((localStorage.getItem("user")));
+    const [folderName, setFolderName] = useState((localStorage.getItem("folder_name")));
 
     useEffect(() => {
 
         localStorage.setItem("token", token);
         localStorage.setItem("user", user); // user_name
+        localStorage.setItem("folder_name", folderName);
 
-    }, [token, user]);
+    }, [token, user, folderName]);
 
 
     const logout = () => {
@@ -22,5 +24,5 @@ export const AutenticacionProviderComponent = ({children}) => {
 
 
 
-    return <AutenticacionContext.Provider value={{token, setToken, user, setUser, logout}}>{children}</AutenticacionContext.Provider>;
+    return <AutenticacionContext.Provider value={{token, setToken, user, setUser, logout, setFolderName, folderName}}>{children}</AutenticacionContext.Provider>;
 };

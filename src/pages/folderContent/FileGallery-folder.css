@@ -1,5 +1,9 @@
-.file-gallery-container {
+.file-gallery-folder {
     margin: 20px;
+  }
+
+  .folder-subtitle {
+    font-size: 13px;
   }
   
   .file-grid {

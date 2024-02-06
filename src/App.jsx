@@ -8,7 +8,7 @@ import UserContent from './pages/userPage/UserContent'
 import NotFound from './pages/notFound/NotFound'
 import './App.css'
 import CreateFolder from './pages/createrFolder/CreateFolder'
-
+import FolderContent from './pages/folderContent/FolderContent'
 
 
 
@@ -20,13 +20,13 @@ function App() {
      
 
       <Routes>
-        <Route path="/" element={<Home />} />
+      <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/recoverpassword" element={<RecoverPassword />} />
         <Route path="/user-content" element={<UserContent />} />
         <Route path="/create-folder" element={<CreateFolder />} />
-        <Route path="/folder" element='' />
+        <Route path="/folder/:id/:folder_name?" element={<FolderContent/>} />
         <Route path="/search" element='' />
         <Route path="*" element={<NotFound />} />
       </Routes>

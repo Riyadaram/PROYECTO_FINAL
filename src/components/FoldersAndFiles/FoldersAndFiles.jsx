@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { getFoldersAndFiles } from '../../services';
 import { AutenticacionContext } from '../../context/AutenticacionContext';
+import { Link } from 'react-router-dom';
 
 
 const FoldersAndFiles = () => {
@@ -34,20 +35,31 @@ const FoldersAndFiles = () => {
     }
   
     return (
-      <div>
-        <h2>Folders</h2>
-        <ul>
+        <div className="file-gallery-container">
+        <h2>Your Content</h2>
+        <div className="file-grid">
+        <div>
           {folders.map(folder => (
-            <li key={folder.id}>{folder.folder_name}</li>
+            // <div key={folder.id} className="file-item"><p>{folder.folder_name}</p></div>
+            <div key={folder.id} className="file-item">
+            <Link to={`/folder/${folder.id}`}>
+              <i className="fas fa-folder"></i>
+              <p>{folder.folder_name}</p>
+            </Link>
+          </div>
+            // <div key={folder.id} className="file-item"><img src={file.url} alt={file.name} /><p>{folder.folder_name}</p></div>
           ))}
-        </ul>
-  
-        <h2>Files</h2>
-        <ul>
+        </div>
+        <div>
           {files.map(file => (
-            <li key={file.id}>{file.file_name}</li>
+            <div key={file.id} className="file-item">
+              <img src={file.url} alt={file.name} />
+              <p>{file.file_name}</p>
+              </div>
           ))}
-        </ul>
+        </div>
+        </div>
+       
       </div>
     );
   };
