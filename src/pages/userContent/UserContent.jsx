@@ -4,7 +4,9 @@ import { AutenticacionContext } from '../../context/AutenticationContext'
 import Header from '../../components/header/Header'
 import FileUpload from '../../components/fileUpload/FileUpload'
 import FooterMenu from '../../components/footerMenu/FooterMenu'
+// import FileGallery from '../../components/fileGallery/FileGallery'
 import './UserContent.css'
+
 
 
 
@@ -26,7 +28,7 @@ const UserContent = () => {
             </a>
             <FileUpload />
 
-           
+           {/* <FileGallery /> */}
             
 
             <FooterMenu />

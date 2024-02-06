@@ -57,3 +57,20 @@ export const uploadFileService = async (data, token) => {
 
     return json.data;  
 };
+
+export const getFoldersAndFiles = async (token) => {
+    const response = await fetch(`${import.meta.env.VITE_URL_API}`, {
+        method: "GET",
+        headers: {
+            Authorization: token,
+        },
+    });
+
+    const json = await response.json();
+
+    if(!response.ok) {
+        throw new Error(json.message);
+    }
+
+    return json.data;  
+};
