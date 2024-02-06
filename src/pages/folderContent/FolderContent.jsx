@@ -3,7 +3,6 @@ import { AutenticacionContext } from '../../context/AutenticationContext'
 import Header from '../../components/header/Header'
 import FooterMenu from '../../components/footerMenu/FooterMenu'
 import FileGalleryFolder from './FileGallery-folder'
-import FolderFileUpload from './FolderFileUpload'
 import './FolderContent.css'
 
 
