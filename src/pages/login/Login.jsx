@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Header from '../../components/Header/Header'
 import './login.css'
 import { useContext, useState } from 'react'
@@ -8,10 +8,12 @@ import { AutenticacionContext } from '../../context/AutenticacionContext'
 
 const Login = () => {
 
+    const navigate = useNavigate();
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const {setToken} = useContext(AutenticacionContext);
+    const {setToken, setUser} = useContext(AutenticacionContext);
 
     const handleForm = async (e) => {
         e.preventDefault();
@@ -23,6 +25,9 @@ const Login = () => {
             console.log(data);
 
             setToken(data.token);
+            setUser(data.user_name); {/*Darle una vuelta a esto */}
+
+            navigate("/user-content");
 
         } catch (error) {
             setError(error.message);
@@ -72,7 +77,7 @@ const Login = () => {
                 
             </form>
             <div className='creators'>
-                    <h3>Built by</h3>
+                    <h5>Built by</h5>
                 <p>
                 <Link className="build-team" to="https://www.linkedin.com/in/gonzalo-jrr/" target="_blank">Gonzalo Rodriguez</Link>&nbsp;
                 <Link className="build-team" to="https://www.linkedin.com/in/scarlettsantanawilliams/" target="_blank">Scarlett Santana</Link>&nbsp;
