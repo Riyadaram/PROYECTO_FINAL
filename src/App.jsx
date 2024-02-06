@@ -28,7 +28,7 @@ function App() {
         <Route path="/recoverpassword" element={<RecoverPassword />} />
         <Route path="/user-content" element={<UserContent />} />
         <Route path="/create-folder" element={<CreateFolder />} />
-        <Route path="/folder/:id/:title?" element={<FolderContent/>} />
+        <Route path="/folder/:id/:folder_name?" element={<FolderContent/>} />
         <Route path="/search" element='' />
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -4,25 +4,26 @@ import { AutenticacionContext } from '../../context/AutenticationContext'
 import Header from '../../components/header/Header'
 import FileUpload from '../../components/fileUpload/FileUpload'
 import FooterMenu from '../../components/footerMenu/FooterMenu'
-import FileGallery from '../../components/fileGallery/FileGallery'
+import FileGalleryFolder from './FileGallery-folder'
 import './FolderContent.css'
+
 
 
 
 
 const FolderContent = () => {
 
-    const {user, } = useContext(AutenticacionContext); 
+    const {folderName} = useContext(AutenticacionContext); 
     
   
     return (
         <div className="folder-content">
             <Header />
 
-            <h1 className="folder-name">{user ? user : 'Folder Name'}</h1> 
+            <h3 className="folder-name">{folderName ? folderName : 'Folder Name'}</h3> 
             <FileUpload />
 
-           <FileGallery />
+           <FileGalleryFolder />
             
 
             <FooterMenu />
