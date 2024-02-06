@@ -69,6 +69,8 @@ export const getFoldersAndFiles = async (token) => {
 
     const json = await response.json();
 
+    console.log("API Response:", json);
+
     if(!response.ok) {
         throw new Error(json.message);
     }
