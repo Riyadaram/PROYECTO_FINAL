@@ -14,8 +14,8 @@ const FoldersAndFiles = () => {
         try {
           const response = await getFoldersAndFiles(token);
           console.log("Folders and Files Data:", response);
-          setFolders(response.data.folder);
-          setFiles(response.data.files);
+          setFolders(response.folder);
+          setFiles(response.files);
         } catch (error) {
           setError(error.message);
         }
