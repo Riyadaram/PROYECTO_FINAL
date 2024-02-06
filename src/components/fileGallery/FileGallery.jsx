@@ -66,8 +66,7 @@ const FileGallery = () => {
         <div>
           {files.map(file => (
             <div key={file.id} className="file-item">
-              <img src={file.url} alt={file.name} />
-              <p>{file.file_name}</p>
+              <a href={`${import.meta.env.VITE_URL_API}/${file.user_id}/${file.file_name}`} alt={file.file_name} download={true}>{file.file_name}</a>
               </div>
           ))}
         </div>

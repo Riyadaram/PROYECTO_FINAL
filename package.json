@@ -13,6 +13,7 @@
     "fetch-suspense": "^1.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
     "react-intl": "^6.6.1",
     "react-router-dom": "^6.21.2",
     "suspense": "^0.0.52"
