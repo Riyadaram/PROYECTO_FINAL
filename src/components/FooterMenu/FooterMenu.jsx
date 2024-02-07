@@ -3,6 +3,7 @@ import { useContext, useState } from 'react'; // Importa useContext y useState
 import './FooterMenu.css';
 import { AutenticacionContext } from '../../context/AutenticacionContext';
 import { uploadFileService } from '../../services';
+import PropTypes from 'prop-types';
 
 import Home from '../../assets/footer_menu_logos/Home_button.png';
 import Plus from '../../assets/footer_menu_logos/Plus_button.png';
@@ -69,5 +70,10 @@ const FooterMenu = ({carpeta, setFiles}) => {
         </div>
     );
 };
+
+FooterMenu.propTypes = {
+    carpeta: PropTypes.string, // carpeta prop is expected to be a string
+    setFiles: PropTypes.func,
+  };
 
 export default FooterMenu;

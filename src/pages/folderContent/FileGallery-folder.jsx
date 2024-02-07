@@ -34,18 +34,6 @@ const FileGalleryFolder = () => {
     return <div>Error: {error}</div>;
   }
 
-  //   const fetchUserFiles = async () => {
-  //     try {
-  //       const response = await fetch(`${import.meta.env.VITE_URL_API}/${user.id}`);
-  //       const data = await response.json();
-  //       setUserFiles(data.files);
-  //     } catch (error) {
-  //       console.error('Error fetching user files:', error);
-  //     }
-  //   };
-
-  //   fetchUserFiles();
-  // }, [user.id]);
 
   return (
 

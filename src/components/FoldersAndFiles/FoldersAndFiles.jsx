@@ -3,6 +3,8 @@ import { getFilesInFolder, getFoldersAndFiles } from '../../services';
 import { AutenticacionContext } from '../../context/AutenticacionContext';
 import { Link } from 'react-router-dom';
 import { CiFolderOn } from "react-icons/ci";
+import PropTypes from 'prop-types';
+
 
 
 const FoldersAndFiles = ({carpeta, files, setFiles}) => {
@@ -78,6 +80,12 @@ const FoldersAndFiles = ({carpeta, files, setFiles}) => {
        
       </div>
     );
+  };
+
+  FoldersAndFiles.propTypes = {
+    carpeta: PropTypes.string, // carpeta prop is expected to be a string
+    files: PropTypes.array.isRequired, // files prop is expected to be an array and is required
+    setFiles: PropTypes.func.isRequired // setFiles prop is expected to be a function and is required
   };
   
   export default FoldersAndFiles;
