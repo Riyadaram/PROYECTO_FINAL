@@ -1,19 +1,41 @@
 .file-gallery-container {
     margin: 20px;
+    padding: 20px; /* Añade un espacio interno para mejorar la legibilidad */
+    background-color: #f9f9f9; /* Cambia el color de fondo del contenedor */
+    border-radius: 8px; /* Agrega bordes redondeados al contenedor */
   }
   
   .file-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta las columnas según el tamaño del contenedor */
     gap: 20px;
   }
-  
+
   .file-item {
-    width: 100%;
-    box-sizing: border-box;
+    padding: 10px; /* Añade un espacio interno a cada elemento */
   }
   
   .file-item img {
     width: 100%;
     height: auto;
   }
+
+
+  .big-dot {
+    font-size: 17px; /* Ajusta el tamaño de la fuente según sea necesario */
+  }
+
+
+  .delete-icon {
+    font-size: 20px;
+    color: #dc3545; /* Color rojo para el ícono de eliminación */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el ícono de eliminación */
+  }
+  
+  .delete-icon:hover {
+    color: #c82333; /* Cambia el color del ícono al pasar el cursor sobre él */
+  }
+
+  
+
+  

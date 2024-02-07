@@ -3,6 +3,12 @@ import { getFilesInFolder, getFoldersAndFiles } from '../../services';
 import { AutenticacionContext } from '../../context/AutenticacionContext';
 import { Link } from 'react-router-dom';
 import { CiFolderOn } from "react-icons/ci";
+import { CiFileOn } from "react-icons/ci";
+import { MdDeleteForever } from "react-icons/md";
+import './FoldersAndFiles.css'
+
+
+
 import PropTypes from 'prop-types';
 
 
@@ -50,9 +56,9 @@ const FoldersAndFiles = ({carpeta, files, setFiles}) => {
         <div>
           {folder && (
             <>
-            <p>.</p>
-            <Link to={`/user-content`}>
-              ..
+            <p className='big-dot'>.</p>
+            <Link to={`/user-content`} className='big-dot'>
+              ../back
             </Link>
             </>
           )
@@ -72,7 +78,13 @@ const FoldersAndFiles = ({carpeta, files, setFiles}) => {
         <div>
           {files.map(file => (
             <div key={file.id} className="file-item">
+              <CiFileOn />
+
+
               <a href={`${import.meta.env.VITE_URL_API}/${file.user_id}${!carpeta? "" : "/"+carpeta}/${file.file_name}`} target={"_blank"} alt={file.file_name} download={true} rel="noreferrer">{file.file_name}</a>
+
+              <MdDeleteForever className="delete-icon" />
+
              </div>
           ))}
         </div>

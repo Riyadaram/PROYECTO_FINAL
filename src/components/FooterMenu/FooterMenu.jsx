@@ -51,7 +51,9 @@ const FooterMenu = ({carpeta, setFiles}) => {
                 <button>
                     {/* Renderiza el botón plus con el evento onClick */}
                     {/*<img src={Plus} className="plus-button" alt="Plus Button Logo" onClick={handlePlusButtonClick}/>*/}
+                    
                     <input
+                    
                 type="file"
                 className="file-input"
                 onChange={handleFileChange}
