@@ -5,9 +5,11 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { CiFolderOn } from "react-icons/ci";
 import { GoArrowLeft } from "react-icons/go";
-import { CiFileOn } from "react-icons/ci";
+// import { CiFileOn } from "react-icons/ci";
 import { MdDeleteForever } from "react-icons/md";
 import './FileGallery.css'
+
+import { FaFile } from "react-icons/fa";
 
 
 
@@ -93,9 +95,11 @@ const FoldersAndFiles = ({carpeta, files, setFiles}) => {
               <div>
                 {files.map(file => (
                   <div key={file.id} className="file-item">
-                    <CiFileOn />
+                    {/* <CiFileOn className='icon-height'/> */}
+                    <FaFile className='icon-height' />
+                    <MdDeleteForever className="delete-icon" onClick={() => handleDeleteFile(file.id)} />
                       <a className="file-name" href={`${import.meta.env.VITE_URL_API}/${file.user_id}${!carpeta? "" : "/"+carpeta}/${file.file_name}`} target={"_blank"} alt={file.file_name} download={true} rel="noreferrer">{file.file_name}</a>
-                        <MdDeleteForever className="delete-icon" onClick={() => handleDeleteFile(file.id)} />
+                        
                   </div>
                 ))}
               </div>

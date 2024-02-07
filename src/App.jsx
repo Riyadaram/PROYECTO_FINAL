@@ -7,7 +7,6 @@ import RecoverPassword from './pages/login/RecoverPassword'
 import UserContent from './pages/userContent/UserContent'
 import NotFound from './pages/notFound/NotFound'
 import CreateFolder from './pages/createFolder/CreateFolder'
-import FolderContent from './pages/folderContent/FolderContent'
 import './App.css'
 
 
@@ -28,7 +27,6 @@ function App() {
         <Route path="/recoverpassword" element={<RecoverPassword />} />
         <Route path="/user-content" element={<UserContent />} />
         <Route path="/create-folder" element={<CreateFolder />} />
-        <Route path="/folder/:id/:folder_name?" element={<FolderContent/>} />
         <Route path="/search" element='' />
         <Route path="*" element={<NotFound />} />
       </Routes>
