@@ -7,6 +7,7 @@ import { CiFolderOn } from "react-icons/ci";
 import { GoArrowLeft } from "react-icons/go";
 import { CiFileOn } from "react-icons/ci";
 import { MdDeleteForever } from "react-icons/md";
+import './FileGallery.css'
 
 
 
@@ -66,18 +67,21 @@ const FoldersAndFiles = ({carpeta, files, setFiles}) => {
     return (
         <div className="file-gallery-container">
         <h2>{folder?.folder_name}</h2>
-        <div className="file-grid">
+        <div >
         <div>
+          <div className='goback-container'>
           {folder && (
             <>
-            <Link  to={`/user-content`} className="goBackButton">
-            <GoArrowLeft />
+            <Link  to={`/user-content`} >
+            <GoArrowLeft className="goBackButton"/>
             </Link>
             </>
           )
           }  
+          </div>
+          <div className="file-grid">
+            <div>
             {folders.map(folder => (
-            // <div key={folder.id} className="file-item"><p>{folder.folder_name}</p></div>
             <div key={folder.id} className="file-item">
             <CiFolderOn />
             <Link to={`/user-content?c=${folder.id}`}>
@@ -85,7 +89,8 @@ const FoldersAndFiles = ({carpeta, files, setFiles}) => {
               <p>{folder.folder_name}</p>
             </Link>
           </div>
-            // <div key={folder.id} className="file-item"><img src={file.url} alt={file.name} /><p>{folder.folder_name}</p></div>
+          
+
           ))}
         </div>
         <div>
@@ -99,9 +104,10 @@ const FoldersAndFiles = ({carpeta, files, setFiles}) => {
               <MdDeleteForever className="delete-icon" onClick={() => handleDeleteFile(file.id)} />
               </div>
           ))}
+          </div>
         </div>
         </div>
-       
+        </div>
       </div>
     );
   };

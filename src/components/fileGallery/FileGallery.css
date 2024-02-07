@@ -1,18 +1,24 @@
 .file-gallery-container {
   margin: 20px;
 }
+.goback-container {
+  display: flex;
+  margin-left: 10%;
+  margin-top: -46px;
+}
 
 .goBackButton {
   color: white;
-    background: #f300a8;
-    padding: 10px 10px 5px 10px;
-    border-radius: 50%;
+  background: #f300a8;
+  padding: 6px 6px 6px 6px;
+  border-radius: 50%;
 }
 
 .file-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  margin-top: 50px;
 }
 
 .file-item {
