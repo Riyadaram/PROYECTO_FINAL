@@ -66,48 +66,42 @@ const FoldersAndFiles = ({carpeta, files, setFiles}) => {
   
     return (
         <div className="file-gallery-container">
-        <h2>{folder?.folder_name}</h2>
-        <div >
-        <div>
-          <div className='goback-container'>
-          {folder && (
-            <>
-            <Link  to={`/user-content`} >
-            <GoArrowLeft className="goBackButton"/>
-            </Link>
-            </>
-          )
-          }  
-          </div>
-          <div className="file-grid">
-            <div>
-            {folders.map(folder => (
-            <div key={folder.id} className="file-item">
-            <CiFolderOn />
-            <Link to={`/user-content?c=${folder.id}`}>
-              <i className="fas fa-folder"></i>
-              <p>{folder.folder_name}</p>
-            </Link>
-          </div>
+          <h2 className='folder-name'>{folder?.folder_name}</h2>
           
-
-          ))}
-        </div>
-        <div>
-          {files.map(file => (
-            <div key={file.id} className="file-item">
-              <CiFileOn />
-
-
-              <a href={`${import.meta.env.VITE_URL_API}/${file.user_id}${!carpeta? "" : "/"+carpeta}/${file.file_name}`} target={"_blank"} alt={file.file_name} download={true} rel="noreferrer">{file.file_name}</a>
-
-              <MdDeleteForever className="delete-icon" onClick={() => handleDeleteFile(file.id)} />
+          <div>
+            <div className='goback-container'>
+            {folder && (
+              <>
+              <Link  to={`/user-content`} >
+              <GoArrowLeft className="goBackButton"/>
+              </Link>
+              </>
+            )
+            }  
+            </div>
+            <div className="file-grid">
+              <div>
+                {folders.map(folder => (
+                  <div key={folder.id} className="file-item">
+                    <CiFolderOn />
+                      <Link className="file-name" to={`/user-content?c=${folder.id}`}>
+                        <p className='folder-name'>{folder.folder_name}</p>
+                      </Link>
+                  </div>
+                ))}
               </div>
-          ))}
+              <div>
+                {files.map(file => (
+                  <div key={file.id} className="file-item">
+                    <CiFileOn />
+                      <a className="file-name" href={`${import.meta.env.VITE_URL_API}/${file.user_id}${!carpeta? "" : "/"+carpeta}/${file.file_name}`} target={"_blank"} alt={file.file_name} download={true} rel="noreferrer">{file.file_name}</a>
+                        <MdDeleteForever className="delete-icon" onClick={() => handleDeleteFile(file.id)} />
+                  </div>
+                ))}
+              </div>
           </div>
-        </div>
-        </div>
-        </div>
+       </div>
+        
       </div>
     );
   };
