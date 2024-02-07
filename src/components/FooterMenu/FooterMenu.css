@@ -22,8 +22,8 @@ button {
 
 .basic-button {
   background-color: white;
-  border-radius: 50%; /* Esto hace que los botones sean circulares */
-  width: 20px; /* Ajusta según tus necesidades */
+  border-radius: 50%; 
+  width: 27px; 
   border: none;
   cursor: pointer;
   outline: none;
@@ -31,23 +31,14 @@ button {
   padding: 10px;
 }
 
-.folder-button {
-  position: relative;
-  width: 25px;
-  padding: 10px 20px;
-  border-radius: 50px;
-  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c);
-  transition: background 1.5s ease-in-out, color 1s ease-in-out;
-  border: 0px solid transparent;
-}
-
-.folder-button:hover {
-  background: linear-gradient(45deg, #e1306c, #fd1d1d, #f56040, #f77737, #fcaf45, #ffdc80);
+.basic-button:hover {
+  transform: scale(1.1);
+  background-color: #f5f5f5;
 }
 
 .plus-button {
   position: relative;
-  width: 30px;
+  width: 20px;
   padding: 7px 17px;
   border-radius: 50px;
   background: linear-gradient(45deg, #e1306c, #fd1d1d, #f56040, #f77737, #fcaf45, #ffdc80);
@@ -57,12 +48,19 @@ button {
 
 .plus-button:hover {
   background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c);
+  transform: scale(1.1);
 }
 
-button:hover {
-  transform: scale(1.25);
+.folder-button {
+  position: relative;
+  width: 16px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c);
+  transition: background 1.5s ease-in-out, color 1s ease-in-out;
+  border: 0px solid transparent;
 }
 
-.button:hover {
-  background-color: #f5f5f5; /* Cambia al blanco roto al hacer hover */
+.folder-button:hover {
+  background: linear-gradient(45deg, #e1306c, #fd1d1d, #f56040, #f77737, #fcaf45, #ffdc80);
 }
