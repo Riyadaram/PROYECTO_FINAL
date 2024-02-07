@@ -83,7 +83,7 @@ const FoldersAndFiles = ({carpeta, files, setFiles}) => {
             </div>
             <div className='container'>
             <div className="file-grid">
-              <div>
+              
 
                 {/* Folders */}
 
@@ -111,7 +111,7 @@ const FoldersAndFiles = ({carpeta, files, setFiles}) => {
                         
                   </div>
                 ))}
-              </div>
+              
           </div>
           </div>
        </div>

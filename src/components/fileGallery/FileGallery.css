@@ -21,10 +21,15 @@
   border-radius: 50%;
 }
 
+.container {
+  max-width: 800px; /* Set the maximum width */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
 .file-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Create columns with a width of 150px */
-  grid-auto-rows: 150px; /* Set the height of each row to 150px */
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); /* Create columns with a width of 150px */
+  grid-auto-rows: 70px; /* Set the height of each row to 150px */
   grid-gap: 10px;
   margin-top: 50px;
 }
@@ -81,8 +86,3 @@ p.folder-name {
   height: auto;
 } */
 
-@media (max-width: 768px) {
-  .file-grid {
-    grid-template-columns: repeat(2, 1fr); /* Change to a single column */
-  }
-}
