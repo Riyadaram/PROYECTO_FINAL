@@ -1,10 +1,12 @@
 import { useState, useEffect, useContext } from 'react';
-import { getFilesInFolder, getFoldersAndFiles } from '../../services';
+import { getFilesInFolder, getFoldersAndFiles, deleteFile } from '../../services';
 import { AutenticacionContext } from '../../context/AutenticationContext';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { CiFolderOn } from "react-icons/ci";
 import { GoArrowLeft } from "react-icons/go";
+import { CiFileOn } from "react-icons/ci";
+import { MdDeleteForever } from "react-icons/md";
 
 
 
@@ -40,6 +42,22 @@ const FoldersAndFiles = ({carpeta, files, setFiles}) => {
         // Perform cleanup if needed
       };
     }, [token, carpeta, setFiles]); // Dependencia de efecto: token
+
+    const handleDeleteFile = async (fileId) => {
+      const confirmDelete = window.confirm("Are you sure you want to delete this file?");
+        if (!confirmDelete) {
+            return; // Si el usuario cancela, no se realiza la eliminación del archivo
+        }
+      try {
+          await deleteFile(token, fileId);
+          const updatedFiles = files.filter(file => file.id !== fileId);
+          setFiles(updatedFiles);
+      } catch (error) {
+          setError(error.message);
+      }
+  };
+  
+
   
     if (error) {
       return <div>Error: {error}</div>;
@@ -58,7 +76,7 @@ const FoldersAndFiles = ({carpeta, files, setFiles}) => {
             </>
           )
           }  
-          {folders.map(folder => (
+            {folders.map(folder => (
             // <div key={folder.id} className="file-item"><p>{folder.folder_name}</p></div>
             <div key={folder.id} className="file-item">
             <CiFolderOn />
@@ -73,8 +91,13 @@ const FoldersAndFiles = ({carpeta, files, setFiles}) => {
         <div>
           {files.map(file => (
             <div key={file.id} className="file-item">
+              <CiFileOn />
+
+
               <a href={`${import.meta.env.VITE_URL_API}/${file.user_id}${!carpeta? "" : "/"+carpeta}/${file.file_name}`} target={"_blank"} alt={file.file_name} download={true} rel="noreferrer">{file.file_name}</a>
-             </div>
+
+              <MdDeleteForever className="delete-icon" onClick={() => handleDeleteFile(file.id)} />
+              </div>
           ))}
         </div>
         </div>

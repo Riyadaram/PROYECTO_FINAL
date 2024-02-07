@@ -94,3 +94,20 @@ export const getFilesInFolder = async (token, carpeta_selecionada) => {
 
     return json.data;  
 };
+
+export const deleteFile = async (token, fileId) => {
+    const response = await fetch(`${import.meta.env.VITE_URL_API}/file/${fileId}`, {
+        method: "DELETE",
+        headers: {
+            Authorization: token,
+        },
+    });
+
+    const json = await response.json();
+
+    if (!response.ok) {
+        throw new Error(json.message);
+    }
+
+    return json.data;
+};
