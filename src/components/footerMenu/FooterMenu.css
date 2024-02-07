@@ -22,8 +22,8 @@
   
   .basic-button {
     background-color: white;
-    border-radius: 50%; /* Esto hace que los botones sean circulares */
-    width: 20px; /* Ajusta según tus necesidades */
+    border-radius: 50%; 
+    width: 27px; 
     border: none;
     cursor: pointer;
     outline: none;
@@ -38,7 +38,7 @@
   
   .plus-button {
     position: relative;
-    width: 30px;
+    width: 20px;
     padding: 7px 17px;
     border-radius: 50px;
     background: linear-gradient(45deg, #e1306c, #fd1d1d, #f56040, #f77737, #fcaf45, #ffdc80);
@@ -53,7 +53,7 @@
 
   .folder-button {
     position: relative;
-    width: 25px;
+    width: 16px;
     padding: 10px 20px;
     border-radius: 50px;
     background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c);
