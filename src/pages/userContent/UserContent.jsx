@@ -4,6 +4,7 @@ import { AutenticacionContext } from '../../context/AutenticationContext'
 import Header from '../../components/header/Header'
 import FooterMenu from '../../components/footerMenu/FooterMenu'
 import FoldersAndFiles from '../../components/fileGallery/FileGallery';
+import './UserContent.css'
 
 
 
