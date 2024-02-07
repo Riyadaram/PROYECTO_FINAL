@@ -4,6 +4,7 @@ import { AutenticacionContext } from '../../context/AutenticationContext';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { CiFolderOn } from "react-icons/ci";
+import { GoArrowLeft } from "react-icons/go";
 
 
 
@@ -51,9 +52,8 @@ const FoldersAndFiles = ({carpeta, files, setFiles}) => {
         <div>
           {folder && (
             <>
-            <p>.</p>
-            <Link to={`/user-content`}>
-              ..
+            <Link  to={`/user-content`} className="goBackButton">
+            <GoArrowLeft />
             </Link>
             </>
           )

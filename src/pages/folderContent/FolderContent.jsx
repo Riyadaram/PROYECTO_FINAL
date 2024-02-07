@@ -21,7 +21,6 @@ const FolderContent = () => {
             <Header />
 
             <h3 className="folder-name">{folderName ? folderName : 'Folder Name'}</h3> 
-            <FolderFileUpload />
 
            <FileGalleryFolder />
             
@@ -33,6 +32,8 @@ const FolderContent = () => {
       
     )
   }
+
+
   
   export default FolderContent
   
