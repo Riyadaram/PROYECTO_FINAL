@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import { getFilesInFolder, getFoldersAndFiles } from '../../services';
+import { getFilesInFolder, getFoldersAndFiles, deleteFile } from '../../services';
 import { AutenticacionContext } from '../../context/AutenticacionContext';
 import { Link } from 'react-router-dom';
 import { CiFolderOn } from "react-icons/ci";
@@ -44,6 +44,16 @@ const FoldersAndFiles = ({carpeta, files, setFiles}) => {
         // Perform cleanup if needed
       };
     }, [token, carpeta]); // Dependencia de efecto: token
+
+    const handleDeleteFile = async (fileId) => {
+      try {
+          await deleteFile(token, fileId);
+          const updatedFiles = files.filter(file => file.id !== fileId);
+          setFiles(updatedFiles);
+      } catch (error) {
+          setError(error.message);
+      }
+  };
   
     if (error) {
       return <div>Error: {error}</div>;
@@ -83,7 +93,7 @@ const FoldersAndFiles = ({carpeta, files, setFiles}) => {
 
               <a href={`${import.meta.env.VITE_URL_API}/${file.user_id}${!carpeta? "" : "/"+carpeta}/${file.file_name}`} target={"_blank"} alt={file.file_name} download={true} rel="noreferrer">{file.file_name}</a>
 
-              <MdDeleteForever className="delete-icon" />
+              <MdDeleteForever className="delete-icon" onClick={() => handleDeleteFile(file.id)} />
 
              </div>
           ))}
