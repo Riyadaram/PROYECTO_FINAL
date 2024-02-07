@@ -81,8 +81,12 @@ const FoldersAndFiles = ({carpeta, files, setFiles}) => {
             )
             }  
             </div>
+            <div className='container'>
             <div className="file-grid">
               <div>
+
+                {/* Folders */}
+
                 {folders.map(folder => (
                   <div key={folder.id} className="file-item">
                     <CiFolderOn />
@@ -91,11 +95,16 @@ const FoldersAndFiles = ({carpeta, files, setFiles}) => {
                       </Link>
                   </div>
                 ))}
-              </div>
-              <div>
+
+                {/* ________________________________ */}
+
+
+                {/* Files */}
+
                 {files.map(file => (
                   <div key={file.id} className="file-item">
                     {/* <CiFileOn className='icon-height'/> */}
+                    {/* <FaDownload className="download-icon" /> */}
                     <FaFile className='icon-height' />
                     <MdDeleteForever className="delete-icon" onClick={() => handleDeleteFile(file.id)} />
                       <a className="file-name" href={`${import.meta.env.VITE_URL_API}/${file.user_id}${!carpeta? "" : "/"+carpeta}/${file.file_name}`} target={"_blank"} alt={file.file_name} download={true} rel="noreferrer">{file.file_name}</a>
@@ -103,6 +112,7 @@ const FoldersAndFiles = ({carpeta, files, setFiles}) => {
                   </div>
                 ))}
               </div>
+          </div>
           </div>
        </div>
         
