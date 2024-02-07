@@ -46,6 +46,10 @@ const FoldersAndFiles = ({carpeta, files, setFiles}) => {
     }, [token, carpeta]); // Dependencia de efecto: token
 
     const handleDeleteFile = async (fileId) => {
+      const confirmDelete = window.confirm("Are you sure you want to delete this file?");
+        if (!confirmDelete) {
+            return; // Si el usuario cancela, no se realiza la eliminación del archivo
+        }
       try {
           await deleteFile(token, fileId);
           const updatedFiles = files.filter(file => file.id !== fileId);
