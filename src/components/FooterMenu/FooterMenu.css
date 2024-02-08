@@ -63,4 +63,5 @@ button {
 
 .folder-button:hover {
   background: linear-gradient(45deg, #e1306c, #fd1d1d, #f56040, #f77737, #fcaf45, #ffdc80);
+  transform: scale(1.1);
 }

@@ -43,7 +43,7 @@ const FoldersAndFiles = ({carpeta, files, setFiles}) => {
       return () => {
         // Perform cleanup if needed
       };
-    }, [token, carpeta]); // Dependencia de efecto: token
+    }, [token, carpeta, setFiles]); // Dependencia de efecto: token
 
     const handleDeleteFile = async (fileId) => {
       const confirmDelete = window.confirm("Are you sure you want to delete this file?");

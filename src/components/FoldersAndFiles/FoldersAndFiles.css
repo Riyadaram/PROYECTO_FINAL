@@ -1,41 +1,46 @@
 .file-gallery-container {
-    margin: 20px;
-    padding: 20px; /* Añade un espacio interno para mejorar la legibilidad */
-    background-color: #f9f9f9; /* Cambia el color de fondo del contenedor */
-    border-radius: 8px; /* Agrega bordes redondeados al contenedor */
-  }
-  
-  .file-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta las columnas según el tamaño del contenedor */
-    gap: 20px;
-  }
+  margin: 20px;
+  padding: 20px; /* Añade un espacio interno para mejorar la legibilidad */
+  background-color: #f9f9f9; /* Cambia el color de fondo del contenedor */
+  border-radius: 8px; /* Agrega bordes redondeados al contenedor */
+}
 
-  .file-item {
-    padding: 10px; /* Añade un espacio interno a cada elemento */
-  }
-  
-  .file-item img {
-    width: 100%;
-    height: auto;
-  }
+.file-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta las columnas según el tamaño del contenedor */
+  gap: 20px;
+}
 
+.file-item {
+  display: flex;
+  align-items: center;
+  padding: 10px; /* Añade un espacio interno a cada elemento */
+}
 
-  .big-dot {
-    font-size: 17px; /* Ajusta el tamaño de la fuente según sea necesario */
-  }
+.file-item .file-info {
+  display: flex;
+  align-items: center;
+}
 
+.file-item .file-icon {
+  margin-right: 10px; /* Espacio entre el icono de archivo y el nombre del archivo */
+}
 
-  .delete-icon {
-    font-size: 20px;
-    color: #dc3545; /* Color rojo para el ícono de eliminación */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el ícono de eliminación */
-  }
-  
-  .delete-icon:hover {
-    color: #c82333; /* Cambia el color del ícono al pasar el cursor sobre él */
-  }
+.delete-icon {
+  font-size: 20px;
+  color: #dc3545; /* Color rojo para el ícono de eliminación */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el ícono de eliminación */
+}
 
-  
+.delete-icon:hover {
+  color: #c82333; /* Cambia el color del ícono al pasar el cursor sobre él */
+}
 
-  
+.file-item a {
+  color: #007bff; /* Color azul para los enlaces */
+  text-decoration: none; /* Elimina el subrayado predeterminado */
+}
+
+.file-item a:hover {
+  text-decoration: underline; /* Agrega subrayado al pasar el cursor sobre el enlace */
+}
