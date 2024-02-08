@@ -41,26 +41,28 @@
     width: 20px;
     padding: 7px 17px;
     border-radius: 50px;
-    background: linear-gradient(45deg, #e1306c, #fd1d1d, #f56040, #f77737, #fcaf45, #ffdc80);
+    background: linear-gradient(45deg, #0027e9, #544bfa, #0027e9);
     transition: background 1.5s ease-in-out, color 1s ease-in-out;
     border: 0px solid transparent;
   }
 
   .plus-button:hover {
-    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c);
+    
+    background: linear-gradient(45deg, #f56040, #f77737, #fcaf45, #ffdc80);
     transform: scale(1.1);
   }
 
   .folder-button {
     position: relative;
-    width: 16px;
+    width: 15px;
     padding: 10px 20px;
     border-radius: 50px;
-    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c);
+    background: linear-gradient(45deg, #0027e9, #544bfa, #0027e9);
     transition: background 1.5s ease-in-out, color 1s ease-in-out;
     border: 0px solid transparent;
   }
   
   .folder-button:hover {
-    background: linear-gradient(45deg, #e1306c, #fd1d1d, #f56040, #f77737, #fcaf45, #ffdc80);
+    background: linear-gradient(45deg, #f56040, #f77737, #fcaf45, #ffdc80);
+    transform: scale(1.1);
   }

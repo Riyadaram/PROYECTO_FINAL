@@ -48,7 +48,7 @@ const CreateFolder = () => {
 
         <p className='p-folder'>Choose a name for the folder</p>
 
-      <form className="folder.form" onSubmit={handleSubmit}>
+      <form className="folder-form" onSubmit={handleSubmit}>
         <input 
           type="text" 
           value={folderName}
