@@ -23,7 +23,6 @@ const Login = () => {
         try {
             const data = await loginUserService({email, password})
 
-            console.log(data);
 
             setToken(data.token);
             setUser(data.user_name); {/*Darle una vuelta a esto */}

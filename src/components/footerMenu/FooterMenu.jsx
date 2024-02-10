@@ -13,7 +13,6 @@ const FooterMenu = ({carpeta, setFiles}) => {
     const [error, setError] = useState(''); // Estado para manejar errores
     const { token } = useContext(AutenticacionContext);
 
-    console.log({ carpeta})
 
     // Función para manejar la selección de archivos
     const handleFileChange = async (e) => {
