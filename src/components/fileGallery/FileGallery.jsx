@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { CiFolderOn } from "react-icons/ci";
 import { GoArrowLeft } from "react-icons/go";
-// import { CiFileOn } from "react-icons/ci";
 import { MdDeleteForever } from "react-icons/md";
 import './FileGallery.css'
 

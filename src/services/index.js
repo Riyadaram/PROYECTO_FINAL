@@ -75,7 +75,14 @@ export const getFoldersAndFiles = async (token) => {
         throw new Error(json.message);
     }
 
-    return json.data;  
+    const orderedFiles = json.data.files.sort((fileA, fileB) => fileA.id - fileB.id)
+
+    console.log({orderedFiles})
+
+    return {
+        ...json.data,
+        files: orderedFiles
+    };
 };
 
 export const getFilesInFolder = async (token, carpeta_selecionada) => {
@@ -92,7 +99,13 @@ export const getFilesInFolder = async (token, carpeta_selecionada) => {
         throw new Error(json.message);
     }
 
-    return json.data;  
+   
+    const orderedFiles = json.data.files.sort((fileA, fileB) => fileA.id - fileB.id)
+
+    return {
+        ...json.data,
+        files: orderedFiles
+    }; 
 };
 
 export const deleteFile = async (token, fileId) => {
@@ -109,5 +122,5 @@ export const deleteFile = async (token, fileId) => {
         throw new Error(json.message);
     }
 
-    return json.data;
+    return json.data
 };

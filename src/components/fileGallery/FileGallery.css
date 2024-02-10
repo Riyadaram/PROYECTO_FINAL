@@ -51,6 +51,11 @@
   margin-left: 28px;
   color: red;
   height: 14px;
+
+  &:hover {
+    color: maroon;
+    cursor: pointer;
+  }
 }
 
 .file-name {
@@ -62,6 +67,10 @@ display: inline-block; /* Ensure the text is displayed as a block element */
   overflow: hidden; /* Hide overflowing text */
   text-overflow: ellipsis; /* Display ellipsis (...) for truncated text */
   max-width: 60px; 
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 p.folder-name {
@@ -74,15 +83,11 @@ p.folder-name {
   overflow: hidden; /* Hide overflowing text */
   text-overflow: ellipsis; /* Display ellipsis (...) for truncated text */
   max-width: 60px; 
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
-/* .file-item {
-  width: 100%;
-  box-sizing: border-box;
-}
 
-.file-item img {
-  width: 100%;
-  height: auto;
-} */
 
